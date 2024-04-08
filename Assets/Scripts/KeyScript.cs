@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class KeyScript : MonoBehaviour
 {
+
+    public string keyID;
+
     // reference to the text mesh pro object
     public TMPro.TextMeshPro KeyText;
     // reference to the sound to play on key press
@@ -12,6 +15,7 @@ public class KeyScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        KeyText.SetText(keyID);
 
     }
 
