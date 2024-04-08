@@ -5,7 +5,6 @@ using UnityEngine;
 public class KeyScript : MonoBehaviour
 {
 
-<<<<<<< HEAD
     public string keyID;
 
     // reference to the text mesh pro object
@@ -34,33 +33,3 @@ public class KeyScript : MonoBehaviour
         sound.Play();
     }
 }
-=======
-	public string keyID;
-
-	// reference to the text mesh pro object
-	public TMPro.TextMeshPro KeyText;
-	// reference to the sound to play on key press
-	public AudioSource sound;
-
-	// Start is called before the first frame update
-	void Start()
-	{
-		KeyText.SetText(keyID);
-
-	}
-
-	// Update is called once per frame
-	void Update()
-	{
-
-	}
-
-	public void pressed()
-	{
-		// for now just log the key pressed
-		LiveDebugConsole.Instance.Log("Key pressed: " + KeyText.text);
-		// play the sound
-		sound.Play();
-	}
-}
->>>>>>> b9095dea90f1d9e52c439786d4c543100491a039
