@@ -4,28 +4,32 @@ using UnityEngine;
 
 public class KeyScript : MonoBehaviour
 {
-    // reference to the text mesh pro object
-    public TMPro.TextMeshPro KeyText;
-    // reference to the sound to play on key press
-    public AudioSource sound;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+	public string keyID;
 
-    }
+	// reference to the text mesh pro object
+	public TMPro.TextMeshPro KeyText;
+	// reference to the sound to play on key press
+	public AudioSource sound;
 
-    // Update is called once per frame
-    void Update()
-    {
+	// Start is called before the first frame update
+	void Start()
+	{
+		KeyText.SetText(keyID);
 
-    }
+	}
 
-    public void pressed()
-    {
-        // for now just log the key pressed
-        LiveDebugConsole.Instance.Log("Key pressed: " + KeyText.text);
-        // play the sound
-        sound.Play();
-    }
+	// Update is called once per frame
+	void Update()
+	{
+
+	}
+
+	public void pressed()
+	{
+		// for now just log the key pressed
+		LiveDebugConsole.Instance.Log("Key pressed: " + KeyText.text);
+		// play the sound
+		sound.Play();
+	}
 }
