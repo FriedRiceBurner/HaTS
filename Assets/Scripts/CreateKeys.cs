@@ -41,7 +41,6 @@ public class CreateKeys : MonoBehaviour
 			GameObject newKey = Instantiate(keyPrefab);
 			newKey.transform.parent = transform;
 			newKey.transform.localPosition = previousPosition + keyDistanceX;
-			Debug.Log(newKey.transform.position);
 			newKey.transform.localScale = KeyScales[KeyboardType];
 			previousPosition = newKey.transform.localPosition;
 			newKey.GetComponent<KeyScript>().keyID = key;

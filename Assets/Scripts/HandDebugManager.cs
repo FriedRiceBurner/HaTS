@@ -16,10 +16,7 @@ public class HandDebugManager : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
-		Debug.Log(leftHand.name);
-		Debug.Log(rightHand.name);
 
-		Debug.Log(OVRHand.HandFinger.Thumb);
 	}
 
 	// Update is called once per frame

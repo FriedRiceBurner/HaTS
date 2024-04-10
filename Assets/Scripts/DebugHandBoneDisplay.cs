@@ -36,7 +36,7 @@ public class DebugHandBoneDisplay : MonoBehaviour
 
         if (hand.IsTracked)
         {
-            if (!boneAdded) CreateBones();
+            if (!this.boneAdded) CreateBones();
         }
 
     }
