@@ -5,13 +5,15 @@ using TMPro;
 
 public class CorrectLayer : MonoBehaviour
 {
+    public static CorrectLayer Instance; // Singleton instance
+
     // reference to the string storage object
     public StringStorage stringStorage;
     // reference to the text mesh pro object
     public TMP_Text text;
     // Start is called before the first frame update
-    List<string> listOfChars = new List<string>();
-    [SerializeField] private List<string> typingListOfChars = new List<string>();
+    private List<string> listOfChars = new List<string>();
+    private List<string> typingListOfChars = new List<string>();
 
 
     string redTag = "<color=" + "red" + ">";
@@ -23,6 +25,8 @@ public class CorrectLayer : MonoBehaviour
 
     void Start()
     {
+        // CorrectLayer. 
+        Instance = this;
         tags.Add(redTag);
         tags.Add(greyTag);
         tags.Add(whiteTag);
@@ -89,29 +93,40 @@ public class CorrectLayer : MonoBehaviour
         //     isDone = true;
         //     break;
         // }
+        LiveDebugConsole.Instance.Log("typedIndex: " + typedIndex + " trueIndex: " + trueIndex);
+        // LiveDebugConsole.Instance.Log("in addChar: " + c + " " + typingListOfChars[typedIndex] + " " + listOfChars[trueIndex]);
+        // LiveDebugConsole.Instance.Log(typingListOfChars[typedIndex]);
+        // LiveDebugConsole.Instance.Log(listOfChars[trueIndex]);
+
         typingListOfChars.Add(c);
 
         if (typingListOfChars[typedIndex] == listOfChars[trueIndex])
         {
+            LiveDebugConsole.Instance.Log("match");
             listOfChars.Insert(trueIndex, whiteTag);
             listOfChars.Insert(trueIndex + 2, greyTag);
             trueIndex += 2;
         }
         else
         {
+            LiveDebugConsole.Instance.Log("no match");
             listOfChars.Insert(trueIndex, redTag);
             listOfChars.Insert(trueIndex + 2, greyTag);
             trueIndex += 2;
         }
 
+        LiveDebugConsole.Instance.Log("before, typedIndex: " + typedIndex + " trueIndex: " + trueIndex);
         typedIndex++;
         trueIndex++;
+        LiveDebugConsole.Instance.Log("after, typedIndex: " + typedIndex + " trueIndex: " + trueIndex);
 
         if (typedIndex >= typingListOfChars.Count)
         {
+            LiveDebugConsole.Instance.Log("isDone sety to true");
             isDone = true;
         }
 
+        LiveDebugConsole.Instance.Log("text: " + string.Join("", listOfChars));
         text.text = string.Join("", listOfChars);
     }
 }

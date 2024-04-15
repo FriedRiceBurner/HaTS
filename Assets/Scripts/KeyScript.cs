@@ -34,7 +34,10 @@ public class KeyScript : MonoBehaviour
         // LiveDebugConsole.Instance.Log("Key pressed: " + KeyText.text);
         // play the sound
         sound.Play();
+        // LiveDebugConsole.Instance.Log("Key pressed: " + KeyText.text);
 
-        correctLayer.GetComponent<CorrectLayer>().AddChar(KeyText.text);
+        // correctLayer.GetComponent<CorrectLayer>().AddChar(KeyText.text);
+        CorrectLayer.Instance.AddChar(KeyText.text);
+
     }
 }
