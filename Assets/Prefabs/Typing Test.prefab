@@ -149,7 +149,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stringStorage: {fileID: 2974122594127589711}
   text: {fileID: 376184197753690528}
-  typingListOfChars: []
 --- !u!1 &6762631335799215536
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,4 +377,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   strings:
-  - few just
+  - few just increase sometimes you these leave order number good change to man follow
+    also high over also through
