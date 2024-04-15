@@ -348,6 +348,7 @@ MonoBehaviour:
   keyID: 
   KeyText: {fileID: 4183177648882317588}
   sound: {fileID: 6987064662260186522}
+  correctLayer: {fileID: 6762631335799215536, guid: 47aa921f2426a404a84bb4aa2df64a0f, type: 3}
 --- !u!82 &6987064662260186522
 AudioSource:
   m_ObjectHideFlags: 0
