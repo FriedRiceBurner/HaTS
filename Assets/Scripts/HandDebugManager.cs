@@ -23,8 +23,8 @@ public class HandDebugManager : MonoBehaviour
 	void Update()
     {
 #if UNITY_EDITOR
-		
-		//foreach(var bone in leftSkel.Bones)
+
+		//foreach (var bone in leftSkel.Bones)
 		//{
 		//	string lefthandstring = $"{leftSkel.GetSkeletonType()}: num of bones -> {leftSkel.GetCurrentNumBones()} \n" +
 		//		$"{leftSkel.GetSkeletonType()}: num of skinnable bones -> {leftSkel.GetCurrentNumSkinnableBones()} \n" +
@@ -34,7 +34,10 @@ public class HandDebugManager : MonoBehaviour
 		//		$"{rightSkel.GetSkeletonType()}: num of skinnable bones -> {rightSkel.GetCurrentNumSkinnableBones()} \n" +
 		//		$"{rightSkel.GetSkeletonType()}: start bone id -> {rightSkel.GetCurrentStartBoneId()} \n" +
 		//		$"{rightSkel.GetSkeletonType()}: end bones id -> {rightSkel.GetCurrentEndBoneId()}\n";
-		//	HandDebugConsole.SetText(lefthandstring + righthandstring);
+			
+		//	//HandDebugConsole.SetText(lefthandstring + righthandstring);
+		//	//Body_LeftHandThumbTip
+		//	//Debug.Log(lefthandstring + righthandstring);
 		//}
 
 #endif

@@ -26,8 +26,7 @@ public class DebugHandBoneDisplay : MonoBehaviour
         {
             Instantiate(bonePrefab, bone.Transform).GetComponent<BoneDebug>().AddBone(bone);
         }
-
-        boneAdded = true;
+		boneAdded = true;
     }
 
 

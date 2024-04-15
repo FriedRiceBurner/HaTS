@@ -10,7 +10,7 @@ public class CreateKeys : MonoBehaviour
 	//private Vector3 startingHome = new Vector3(0, 0, 0);
 	//private Vector3 startingBottom = new Vector3(0, 0, 0);
 
-	private List<string> topRow = new List<string>()
+	[HideInInspector] public List<string> topRow = new List<string>()
 	{ "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "[ {", "] }"};
 
 	private List<string> homeRow = new List<string>()
@@ -32,9 +32,9 @@ public class CreateKeys : MonoBehaviour
 	};
 
 	// Start is called before the first frame update
-	public void PlaceKeys()
+	public void PlaceKeys(int KeyboardType, Vector3 keyDistanceX, Vector3 keyDistanceY, Vector3 shiftedRow)
 	{
-		//previousPosition = new Vector3(0, 0, 0);
+		previousPosition = new Vector3(0, 0, 0);
 
 		foreach (string key in topRow)
 		{
