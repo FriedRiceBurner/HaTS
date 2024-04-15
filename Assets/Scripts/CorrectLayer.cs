@@ -25,6 +25,8 @@ public class CorrectLayer : MonoBehaviour
 
     void Start()
     {
+        LiveDebugConsole.Instance.Log("CorrectLayer Start");
+        // LiveDebugConsole.Instance.Log("HI".ToLower());
         // CorrectLayer. 
         Instance = this;
         tags.Add(redTag);
@@ -100,12 +102,19 @@ public class CorrectLayer : MonoBehaviour
 
         typingListOfChars.Add(c);
 
-        if (typingListOfChars[typedIndex] == listOfChars[trueIndex])
+        LiveDebugConsole.Instance.Log(typingListOfChars[typedIndex]);
+        LiveDebugConsole.Instance.Log(listOfChars[trueIndex]);
+
+        if (typingListOfChars[typedIndex].ToLower() == listOfChars[trueIndex].ToLower())
         {
             LiveDebugConsole.Instance.Log("match");
             listOfChars.Insert(trueIndex, whiteTag);
             listOfChars.Insert(trueIndex + 2, greyTag);
             trueIndex += 2;
+            // 01  2  3  4     5    6
+            // ju     s             t
+            // ju     d             t
+            // ju<red>d<white><grey>t
         }
         else
         {
@@ -126,7 +135,7 @@ public class CorrectLayer : MonoBehaviour
             isDone = true;
         }
 
-        LiveDebugConsole.Instance.Log("text: " + string.Join("", listOfChars));
+        // LiveDebugConsole.Instance.Log("text: " + string.Join("", listOfChars));
         text.text = string.Join("", listOfChars);
     }
 }

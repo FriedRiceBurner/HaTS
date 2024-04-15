@@ -294,9 +294,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2430803314742222473}
+      - m_Target: {fileID: 9157067564170163526, guid: 41e665242ede7eb41be80a638519ccb5, type: 3}
         m_TargetAssemblyTypeName: KeyScript, Assembly-CSharp
-        m_MethodName: pressed
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

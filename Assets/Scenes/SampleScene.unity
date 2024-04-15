@@ -4013,7 +4013,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7149806875556339424, guid: e17f1eb2ffc9c474b8beabbe57142752, type: 3}
       propertyPath: m_text
-      value: Hello, World!
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7149806875556339424, guid: e17f1eb2ffc9c474b8beabbe57142752, type: 3}
       propertyPath: m_fontColor.b
