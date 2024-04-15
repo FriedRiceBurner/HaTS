@@ -17,6 +17,7 @@ public class DebugHandBoneDisplay : MonoBehaviour
     {
         if(!hand) hand = GetComponent<OVRHand>();
         if(!handSkel) handSkel = GetComponent<OVRSkeleton>();
+
     }
     private void CreateBones()
     {

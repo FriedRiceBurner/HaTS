@@ -32,7 +32,7 @@ public class CreateKeys : MonoBehaviour
 	};
 
 	// Start is called before the first frame update
-	void Start()
+	public void PlaceKeys()
 	{
 		//previousPosition = new Vector3(0, 0, 0);
 
@@ -54,7 +54,7 @@ public class CreateKeys : MonoBehaviour
 			GameObject newKey = Instantiate(keyPrefab);
 			newKey.transform.parent = transform;
 			newKey.transform.localPosition = previousPosition + keyDistanceX;
-			Debug.Log(newKey.transform.position);
+			//Debug.Log(newKey.transform.position);
 			newKey.transform.localScale = KeyScales[KeyboardType];
 			previousPosition = newKey.transform.localPosition;
 			newKey.GetComponent<KeyScript>().keyID = key;
@@ -68,7 +68,7 @@ public class CreateKeys : MonoBehaviour
 			GameObject newKey = Instantiate(keyPrefab);
 			newKey.transform.parent = transform;
 			newKey.transform.localPosition = previousPosition + keyDistanceX;
-			Debug.Log(newKey.transform.position);
+			//Debug.Log(newKey.transform.position);
 			newKey.transform.localScale = KeyScales[KeyboardType];
 			previousPosition = newKey.transform.localPosition;
 			newKey.GetComponent<KeyScript>().keyID = key;

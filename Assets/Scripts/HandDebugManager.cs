@@ -24,18 +24,18 @@ public class HandDebugManager : MonoBehaviour
     {
 #if UNITY_EDITOR
 		
-		foreach(var bone in leftSkel.Bones)
-		{
-			string lefthandstring = $"{leftSkel.GetSkeletonType()}: num of bones -> {leftSkel.GetCurrentNumBones()} \n" +
-				$"{leftSkel.GetSkeletonType()}: num of skinnable bones -> {leftSkel.GetCurrentNumSkinnableBones()} \n" +
-				$"{leftSkel.GetSkeletonType()}: start bone id -> {leftSkel.GetCurrentStartBoneId()} \n" +
-				$"{leftSkel.GetSkeletonType()}: end bones id -> {leftSkel.GetCurrentEndBoneId()}\n";
-			string righthandstring = $"{rightSkel.GetSkeletonType()}: num of bones -> {rightSkel.GetCurrentNumBones()} \n" +
-				$"{rightSkel.GetSkeletonType()}: num of skinnable bones -> {rightSkel.GetCurrentNumSkinnableBones()} \n" +
-				$"{rightSkel.GetSkeletonType()}: start bone id -> {rightSkel.GetCurrentStartBoneId()} \n" +
-				$"{rightSkel.GetSkeletonType()}: end bones id -> {rightSkel.GetCurrentEndBoneId()}\n";
-			HandDebugConsole.SetText(lefthandstring + righthandstring);
-		}
+		//foreach(var bone in leftSkel.Bones)
+		//{
+		//	string lefthandstring = $"{leftSkel.GetSkeletonType()}: num of bones -> {leftSkel.GetCurrentNumBones()} \n" +
+		//		$"{leftSkel.GetSkeletonType()}: num of skinnable bones -> {leftSkel.GetCurrentNumSkinnableBones()} \n" +
+		//		$"{leftSkel.GetSkeletonType()}: start bone id -> {leftSkel.GetCurrentStartBoneId()} \n" +
+		//		$"{leftSkel.GetSkeletonType()}: end bones id -> {leftSkel.GetCurrentEndBoneId()}\n";
+		//	string righthandstring = $"{rightSkel.GetSkeletonType()}: num of bones -> {rightSkel.GetCurrentNumBones()} \n" +
+		//		$"{rightSkel.GetSkeletonType()}: num of skinnable bones -> {rightSkel.GetCurrentNumSkinnableBones()} \n" +
+		//		$"{rightSkel.GetSkeletonType()}: start bone id -> {rightSkel.GetCurrentStartBoneId()} \n" +
+		//		$"{rightSkel.GetSkeletonType()}: end bones id -> {rightSkel.GetCurrentEndBoneId()}\n";
+		//	HandDebugConsole.SetText(lefthandstring + righthandstring);
+		//}
 
 #endif
 	}
