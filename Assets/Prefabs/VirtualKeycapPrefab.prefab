@@ -294,9 +294,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2430803314742222473}
+      - m_Target: {fileID: 9157067564170163526, guid: 41e665242ede7eb41be80a638519ccb5, type: 3}
         m_TargetAssemblyTypeName: KeyScript, Assembly-CSharp
-        m_MethodName: pressed
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -348,6 +348,7 @@ MonoBehaviour:
   keyID: 
   KeyText: {fileID: 4183177648882317588}
   sound: {fileID: 6987064662260186522}
+  correctLayer: {fileID: 6762631335799215536, guid: 47aa921f2426a404a84bb4aa2df64a0f, type: 3}
 --- !u!82 &6987064662260186522
 AudioSource:
   m_ObjectHideFlags: 0

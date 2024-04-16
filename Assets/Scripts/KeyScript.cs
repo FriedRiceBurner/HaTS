@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+// using TMPro;
 
 public class KeyScript : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class KeyScript : MonoBehaviour
     public TMPro.TextMeshPro KeyText;
     // reference to the sound to play on key press
     public AudioSource sound;
+
+    [SerializeField] private GameObject correctLayer;
 
     // Start is called before the first frame update
     void Start()
@@ -28,8 +31,13 @@ public class KeyScript : MonoBehaviour
     public void pressed()
     {
         // for now just log the key pressed
-        LiveDebugConsole.Instance.Log("Key pressed: " + KeyText.text);
+        // LiveDebugConsole.Instance.Log("Key pressed: " + KeyText.text);
         // play the sound
         sound.Play();
+        // LiveDebugConsole.Instance.Log("Key pressed: " + KeyText.text);
+
+        // correctLayer.GetComponent<CorrectLayer>().AddChar(KeyText.text);
+        CorrectLayer.Instance.AddChar(KeyText.text);
+
     }
 }
