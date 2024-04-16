@@ -63,13 +63,13 @@ public class GameManager : MonoBehaviour
 
 	// Start is called before the first frame update
 	void Start()
-    {
+	{
 
-    }
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
+	// Update is called once per frame
+	void Update()
+	{
 		//middle finger tracking
 		isLeftMiddleFingerPinching = leftHand.GetFingerIsPinching(HandFinger.Middle);
 		leftMiddleFingerConfidence = leftHand.GetFingerConfidence(HandFinger.Middle);
@@ -109,7 +109,7 @@ public class GameManager : MonoBehaviour
 		//HandDebugConsole.SetText($"left pinch: {isLeftIndexFingerPinching}, and right pinch: {isRightIndexFingerPinching}\n" +
 		//	$"left confidence: {leftIndexFingerConfidence}, and right confidence: {rightIndexFingerConfidence}");
 
-		if(isLeftPinkyFingerPinching && isRightPinkyFingerPinching)
+		if (isLeftPinkyFingerPinching && isRightPinkyFingerPinching)
 		{
 			Debug.Log("pinched pinky");
 
@@ -195,7 +195,7 @@ public class GameManager : MonoBehaviour
 
 	private void PlaceKeyboard(int KeyboardType)
 	{
-		if(KeyboardType == 0)
+		if (KeyboardType == 0)
 		{
 			if (!virtualKeyboard.activeSelf)
 			{
@@ -224,7 +224,7 @@ public class GameManager : MonoBehaviour
 
 
 		}
-		if(KeyboardType == 1)
+		if (KeyboardType == 1)
 		{
 			if (!physicalKeyboard.activeSelf)
 			{
@@ -243,6 +243,7 @@ public class GameManager : MonoBehaviour
 				Debug.Log("averageDistance");
 				Debug.Log(averageDistance);
 
+				// put this back in later
 				physicalKeyboard.GetComponent<CreateKeys>().PlaceKeys(KeyboardType, new Vector3(averageDistance, 0, 0), new Vector3(0, 0, -averageDistance), new Vector3((averageDistance / 2.4f), 0, 0));
 
 			}

@@ -5,12 +5,15 @@ using UnityEngine;
 public class CreateKeys : MonoBehaviour
 {
 	[SerializeField] private GameObject keyPrefab;
+	[SerializeField] private GameObject SpacebarPrefab;
+
 	public int KeyboardType;
 	private Vector3 previousPosition = new Vector3(0, 0, 0);
 	//private Vector3 startingHome = new Vector3(0, 0, 0);
 	//private Vector3 startingBottom = new Vector3(0, 0, 0);
 
-	[HideInInspector] public List<string> topRow = new List<string>()
+	[HideInInspector]
+	public List<string> topRow = new List<string>()
 	{ "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "[ {", "] }"};
 
 	private List<string> homeRow = new List<string>()
@@ -19,6 +22,7 @@ public class CreateKeys : MonoBehaviour
 	private List<string> bottomRow = new List<string>()
 	{ "Z", "X", "C", "V", "B", "N", "M", ", <", ". >", "/ ?"};
 
+	private Vector3 centerMarker;
 
 	//distance from center of each key to next
 	Vector3 keyDistanceX = new Vector3(0.01905f, 0, 0);
@@ -26,13 +30,18 @@ public class CreateKeys : MonoBehaviour
 	Vector3 shiftedRow = new Vector3(0.0079375f, 0, 0);
 
 	// virtual vs physical keyboard overlay
-	private Vector3[] KeyScales = { 
-		new Vector3(0.0174625f, 0.0174625f, 0.0174625f),
+	private Vector3[] KeyScales = {
+		new Vector3(1, 1, 1),
 		new Vector3(1, 1, 1),
 	};
 
-	// Start is called before the first frame update
 	public void PlaceKeys(int KeyboardType, Vector3 keyDistanceX, Vector3 keyDistanceY, Vector3 shiftedRow)
+	{
+
+	}
+
+	// Start is called before the first frame update
+	void Start()
 	{
 		previousPosition = new Vector3(0, 0, 0);
 
@@ -73,8 +82,18 @@ public class CreateKeys : MonoBehaviour
 			previousPosition = newKey.transform.localPosition;
 			newKey.GetComponent<KeyScript>().keyID = key;
 			newKey.name = key + "-key";
-		}
+			if (key.Equals("B")) centerMarker = newKey.transform.localPosition;
 
+		}
+		previousPosition = centerMarker + keyDistanceY;
+
+		GameObject spacebarkey = Instantiate(SpacebarPrefab);
+		spacebarkey.transform.parent = transform;
+		spacebarkey.transform.localPosition = previousPosition + keyDistanceX;
+		spacebarkey.transform.localScale = KeyScales[KeyboardType];
+		previousPosition = new Vector3(centerMarker.x, spacebarkey.transform.localPosition.y, spacebarkey.transform.localPosition.z);
+		spacebarkey.GetComponent<KeyScript>().keyID = " ";
+		spacebarkey.name = "";
 
 
 	}

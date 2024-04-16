@@ -13,12 +13,13 @@ public class KeyScript : MonoBehaviour
     // reference to the sound to play on key press
     public AudioSource sound;
 
-    [SerializeField] private GameObject correctLayer;
+    private GameObject correctLayer;
 
     // Start is called before the first frame update
     void Start()
     {
         KeyText.SetText(keyID);
+        GameObject correctLayer = GameObject.Find("Typing Test");
 
     }
 

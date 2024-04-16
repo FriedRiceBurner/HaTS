@@ -33,13 +33,14 @@ public class CorrectLayer : MonoBehaviour
         tags.Add(greyTag);
         tags.Add(whiteTag);
 
-        text.text = stringStorage.GetString(0);
+        int randomIndex = Random.Range(0, 5);
+        text.text = stringStorage.GetString(randomIndex);
 
         // seperate the string into individual characters, this aids in inline color changes later
-        for (int i = 0; i < stringStorage.GetString(0).Length; i++)
+        for (int i = 0; i < stringStorage.GetString(randomIndex).Length; i++)
         {
             // Debug.Log(stringStorage.GetString(0).Substring(i, 1));
-            listOfChars.Add(stringStorage.GetString(0).Substring(i, 1));
+            listOfChars.Add(stringStorage.GetString(randomIndex).Substring(i, 1));
             // Debug.Log(">>>>>>>>>>>>>" + listOfChars.Count);
         }
         // Debug.Log(">>>>>>>>>>>>>" + string.Join("", listOfChars));
