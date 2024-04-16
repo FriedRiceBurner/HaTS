@@ -16,6 +16,8 @@ public class CorrectLayer : MonoBehaviour
     // Start is called before the first frame update
     private List<string> listOfChars = new List<string>();
     private List<string> typingListOfChars = new List<string>();
+    private List<int> wordCounts = new List<int>();
+    private List<float> testTimes = new List<float>();
 
 
     string redTag = "<color=" + "red" + ">";
@@ -29,6 +31,9 @@ public class CorrectLayer : MonoBehaviour
     private int typedIndex = 0;
     private int trueIndex = 0;
 
+    private int tmpWordCount = 0;
+    private float tmpTime = 0.0f;
+
     void Start()
     {
         LiveDebugConsole.Instance.Log("CorrectLayer Start");
@@ -37,15 +42,7 @@ public class CorrectLayer : MonoBehaviour
         tags.Add(greyTag);
         tags.Add(whiteTag);
 
-        int randomIndex = Random.Range(0, 5);
-        text.text = stringStorage.GetString(randomIndex);
-
-        for (int i = 0; i < stringStorage.GetString(randomIndex).Length; i++)
-        {
-            listOfChars.Add(stringStorage.GetString(randomIndex).Substring(i, 1));
-        }
-        testLength = listOfChars.Count;
-        LiveDebugConsole.Instance.Log("testLength: " + testLength);
+        reset();
     }
 
     private bool isDone = false;
@@ -55,52 +52,92 @@ public class CorrectLayer : MonoBehaviour
 
     }
 
+    private void reset()
+    {
+        LiveDebugConsole.Instance.Log("new test started");
+        listOfChars.Clear();
+        typingListOfChars.Clear();
+        started = false;
+        typedIndex = 0;
+        trueIndex = 0;
+        isDone = false;
+        wordCounts.Clear();
+        testTimes.Clear();
+
+        int randomIndex = Random.Range(0, 5);
+        text.text = stringStorage.GetString(randomIndex);
+
+        // get the amount of words in the string by splitting it by spaces
+        int wordCount = stringStorage.GetString(randomIndex).Split(' ').Length;
+        LiveDebugConsole.Instance.Log("wordCount: " + wordCount);
+        tmpWordCount = wordCount;
+
+        for (int i = 0; i < stringStorage.GetString(randomIndex).Length; i++)
+        {
+            listOfChars.Add(stringStorage.GetString(randomIndex).Substring(i, 1));
+        }
+        testLength = listOfChars.Count;
+        LiveDebugConsole.Instance.Log("testLength: " + testLength);
+
+        textTimer.resetTimer();
+    }
+
     public void AddChar(string c)
     {
         if (started == false)
         {
-            LiveDebugConsole.Instance.Log(">>> started");
             started = true;
             textTimer.startTimer();
         }
 
-        // LiveDebugConsole.Instance.Log("typedIndex: " + typedIndex + " trueIndex: " + trueIndex);
-
         typingListOfChars.Add(c);
-
-        // LiveDebugConsole.Instance.Log(typingListOfChars[typedIndex]);
-        // LiveDebugConsole.Instance.Log(listOfChars[trueIndex]);
 
         if (typingListOfChars[typedIndex].ToLower() == listOfChars[trueIndex].ToLower())
         {
-            // LiveDebugConsole.Instance.Log("match");
             listOfChars.Insert(trueIndex, whiteTag);
             listOfChars.Insert(trueIndex + 2, greyTag);
             trueIndex += 2;
         }
         else
         {
-            // LiveDebugConsole.Instance.Log("no match");
             listOfChars.Insert(trueIndex, redTag);
             listOfChars.Insert(trueIndex + 2, greyTag);
             trueIndex += 2;
         }
 
-        // LiveDebugConsole.Instance.Log("before, typedIndex: " + typedIndex + " trueIndex: " + trueIndex);
         typedIndex++;
         trueIndex++;
-        // LiveDebugConsole.Instance.Log("after, typedIndex: " + typedIndex + " trueIndex: " + trueIndex);
 
-        LiveDebugConsole.Instance.Log("typedIndex: " + typedIndex + " testLength: " + testLength);
         if (typedIndex >= testLength)
         {
-            LiveDebugConsole.Instance.Log("typedIndex >= typingListOfChars.Count");
-            // LiveDebugConsole.Instance.Log("isDone set to true");
             isDone = true;
+
+            wordCounts.Add(tmpWordCount);
+
+            testTimes.Add(textTimer.getTime());
             textTimer.stopTimer();
+
+            updateAvg();
+            reset();
         }
 
-        // LiveDebugConsole.Instance.Log("text: " + string.Join("", listOfChars));
         text.text = string.Join("", listOfChars);
+    }
+
+    private void updateAvg()
+    {
+        // sum up all the float values in the testTimes list
+        float timeSum = 0.0f;
+        int wordSum = 0;
+        for (int i = 0; i < wordCounts.Count; i++)
+        {
+            timeSum += testTimes[i];
+            wordSum += wordCounts[i];
+        }
+
+        float timeAvg = timeSum / testTimes.Count;
+        float wordAvg = wordSum / wordCounts.Count;
+        float WPM = wordAvg / timeAvg * 60;
+        textTimer.updateAvg(WPM);
     }
 }

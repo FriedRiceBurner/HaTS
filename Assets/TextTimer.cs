@@ -8,10 +8,10 @@ public class TextTimer : MonoBehaviour
     private float timeStart;
     private bool timerActive = false;
     [SerializeField] private TMP_Text stopwatchText;
+    [SerializeField] private TMP_Text avgText;
     // Start is called before the first frame update
     void Start()
     {
-        LiveDebugConsole.Instance.Log("TextTimer Start");
         stopwatchText.text = "0:00";
     }
 
@@ -20,7 +20,6 @@ public class TextTimer : MonoBehaviour
     {
         if (timerActive)
         {
-            LiveDebugConsole.Instance.Log("Timer is active");
             float time = Time.time - timeStart;
             string minutes = ((int)time / 60).ToString();
             string seconds = (time % 60).ToString("f2");
@@ -31,7 +30,6 @@ public class TextTimer : MonoBehaviour
 
     public void startTimer()
     {
-        LiveDebugConsole.Instance.Log("Timer started");
         // start timer
         timeStart = Time.time;
         timerActive = true;
@@ -39,16 +37,24 @@ public class TextTimer : MonoBehaviour
 
     public void stopTimer()
     {
-        LiveDebugConsole.Instance.Log("Timer stopped");
         // stop timer
         timerActive = false;
     }
 
     public void resetTimer()
     {
-        LiveDebugConsole.Instance.Log("Timer reset");
         // reset timer
         stopwatchText.text = "0:00";
         timeStart = Time.time;
+    }
+
+    public float getTime()
+    {
+        return Time.time - timeStart;
+    }
+
+    public void updateAvg(float avg)
+    {
+        avgText.text = "Avg WPM: " + avg.ToString("f2");
     }
 }
