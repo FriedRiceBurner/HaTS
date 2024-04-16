@@ -20,7 +20,7 @@ public class TextTimer : MonoBehaviour
     {
         if (timerActive)
         {
-            LiveDebugConsole.Instance.Log("Timer is active");
+            // LiveDebugConsole.Instance.Log("Timer is active");
             float time = Time.time - timeStart;
             string minutes = ((int)time / 60).ToString();
             string seconds = (time % 60).ToString("f2");

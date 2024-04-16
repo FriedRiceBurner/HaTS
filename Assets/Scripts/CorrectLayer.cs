@@ -45,7 +45,6 @@ public class CorrectLayer : MonoBehaviour
             listOfChars.Add(stringStorage.GetString(randomIndex).Substring(i, 1));
         }
         testLength = listOfChars.Count;
-        LiveDebugConsole.Instance.Log("testLength: " + testLength);
     }
 
     private bool isDone = false;
@@ -53,6 +52,28 @@ public class CorrectLayer : MonoBehaviour
     void Update()
     {
 
+    }
+
+    private void reset()
+    {
+        listOfChars.Clear();
+        typingListOfChars.Clear();
+        started = false;
+        typedIndex = 0;
+        trueIndex = 0;
+        isDone = false;
+
+        int randomIndex = Random.Range(0, 5);
+        text.text = stringStorage.GetString(randomIndex);
+
+        for (int i = 0; i < stringStorage.GetString(randomIndex).Length; i++)
+        {
+            listOfChars.Add(stringStorage.GetString(randomIndex).Substring(i, 1));
+        }
+        testLength = listOfChars.Count;
+        LiveDebugConsole.Instance.Log("testLength: " + testLength);
+
+        textTimer.resetTimer();
     }
 
     public void AddChar(string c)
@@ -98,6 +119,7 @@ public class CorrectLayer : MonoBehaviour
             // LiveDebugConsole.Instance.Log("isDone set to true");
             isDone = true;
             textTimer.stopTimer();
+            reset();
         }
 
         // LiveDebugConsole.Instance.Log("text: " + string.Join("", listOfChars));
