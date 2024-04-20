@@ -52,6 +52,8 @@ public class GameManager : MonoBehaviour
 
 	private bool leftKeyLock = false;
 	private bool rightKeyLock = false;
+	private bool checkingLeftHand = false;
+	private bool checkingRighttHand = false;
 
 	private Vector3 leftFKey;
 	private Vector3 leftDKey;
@@ -97,17 +99,23 @@ public class GameManager : MonoBehaviour
 		isRightPinkyFingerPinching = rightHand.GetFingerIsPinching(HandFinger.Pinky);
 
 		//used for physical key confirmation
-		if (isRightMiddleFingerPinching && !isLeftMiddleFingerPinching && functionInProgress)
+		if (isRightMiddleFingerPinching && !isLeftMiddleFingerPinching && functionInProgress && checkingLeftHand)
 		{
-			leftKeyLock = true;
 			Debug.Log("right middle");
+			Debug.Log(checkingLeftHand);
+
+			leftKeyLock = true;
+			checkingLeftHand = false;
+			checkingRighttHand = true;
 		}
 
-		if (!isRightMiddleFingerPinching && isLeftMiddleFingerPinching && functionInProgress)
+		if (!isRightMiddleFingerPinching && isLeftMiddleFingerPinching && functionInProgress && checkingRighttHand)
 		{
-			rightKeyLock = true;
 			Debug.Log("left middle");
+			Debug.Log(checkingRighttHand);
 
+			rightKeyLock = true;
+			checkingRighttHand = false;
 		}
 
 		//HandDebugConsole.SetText($"left pinch: {isLeftIndexFingerPinching}, and right pinch: {isRightIndexFingerPinching}\n" +
@@ -117,7 +125,7 @@ public class GameManager : MonoBehaviour
 		{
 			functionInProgress = true;
 
-			Debug.Log("pinched pinky");
+			// Debug.Log("pinched pinky");
 
 			if (virtualKeyboard.activeSelf)
 			{
@@ -150,6 +158,7 @@ public class GameManager : MonoBehaviour
 		{
 			functionInProgress = true;
 
+
 			StartCoroutine(TrackLeftKeys());
 
 
@@ -159,7 +168,13 @@ public class GameManager : MonoBehaviour
 
 	IEnumerator TrackLeftKeys()
 	{
+
 		HandDebugConsole.SetText("Place left hand on ASDF and pinch right middle finger and thumb");
+		// Debug.Log("Place left hand on ASDF and pinch right middle finger and thumb");
+		yield return new WaitForSeconds(2);
+
+		Debug.Log(leftMiddleFingerPinchStrength);
+		checkingLeftHand = true;
 		while (!leftKeyLock)
 		{
 			yield return null;
@@ -167,8 +182,9 @@ public class GameManager : MonoBehaviour
 		Debug.Log("done checking left");
 		leftFKey = leftHandGameObject.transform.FindChildRecursive(OVRSkeleton.BoneId.Body_LeftHandIndexTip.ToString().Insert(4 + 9, "_").Substring(9)).Find("Bone(Clone)").transform.position;
 		leftDKey = leftHandGameObject.transform.FindChildRecursive(OVRSkeleton.BoneId.Body_LeftHandMiddleTip.ToString().Insert(4 + 13, "_").Substring(13)).Find("Bone(Clone)").transform.position;
-		Debug.Log(leftFKey);
-		Debug.Log(leftDKey);
+
+		// Debug.Log(leftFKey);
+		// Debug.Log(leftDKey);
 
 		leftKeyLock = false;
 		StartCoroutine(TrackRightKeys());
@@ -178,6 +194,12 @@ public class GameManager : MonoBehaviour
 	IEnumerator TrackRightKeys()
 	{
 		HandDebugConsole.SetText("Place right hand on JKL; and pinch left middle finger and thumb");
+		// Debug.Log("Place right hand on JKL; and pinch left middle finger and thumb");
+		yield return new WaitForSeconds(2);
+
+		checkingRighttHand = true;
+		// Debug.Log(rightMiddleFingerPinchStrength);
+		// Debug.Log(leftMiddleFingerPinchStrength);
 
 		while (!rightKeyLock)
 		{
@@ -189,8 +211,8 @@ public class GameManager : MonoBehaviour
 
 		rightJKey = rightHandGameObject.transform.FindChildRecursive(OVRSkeleton.BoneId.Body_RightHandIndexTip.ToString().Insert(18, "_").Substring(14)).Find("Bone(Clone)").position;
 		rightKKey = rightHandGameObject.transform.FindChildRecursive(OVRSkeleton.BoneId.Body_RightHandMiddleTip.ToString().Insert(14, "_").Substring(10)).Find("Bone(Clone)").position;
-		Debug.Log(rightJKey);
-		Debug.Log(rightKKey);
+		// Debug.Log(rightJKey);
+		// Debug.Log(rightKKey);
 
 		rightKeyLock = false;
 		PlaceKeyboard(1);
@@ -213,27 +235,30 @@ public class GameManager : MonoBehaviour
 
 			//float placementMagnitude = virtualKeyboard.GetComponent<CreateKeys>().topRow.Count() * 0.01905f;
 
-			// virtualKeyboard.transform.position = (leftHand.transform.position + rightHand.transform.position) / 2
-			// 										+ new Vector3(leftHand.transform.position.x, -0.03f, leftHand.transform.position.z / 2);
-			virtualKeyboard.transform.position = (leftHand.transform.position + rightHand.transform.position) / 2;
-
-			// virtualKeyboard.transform.position = (leftHand.transform.position + rightHand.transform.position) / 2;
+			virtualKeyboard.transform.position = (leftHand.transform.position + rightHand.transform.position) / 2
+			 										+ new Vector3(leftHand.transform.position.x / 2, -0.04f, leftHand.transform.position.z) / 2;
 
 			// Calculate the direction vector from target1 to target2
 			Vector3 direction = rightHand.transform.position - leftHand.transform.position;
 
 			// Calculate the rotation angle based on the direction vector
 			float HorizontalAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+			//anyvector negative will cause keyboard to flip upside down, add 180 to flip back
+			if (direction.x < 0) HorizontalAngle += 180;
+
 			float TiltedAngle = Mathf.Atan2(direction.z, direction.x) * Mathf.Rad2Deg;
 			//float VerticalAngle = Mathf.Atan2(direction.y, direction.z) * Mathf.Rad2Deg;
 
 			// Set the rotation of the object based on the calculated angle
 			virtualKeyboard.transform.rotation = Quaternion.Euler(0, -TiltedAngle, HorizontalAngle);
-			//virtualKeyboard.transform.SetPositionAndRotation();
 
-			Debug.Log(leftHand.transform.position);
-			Debug.Log(rightHand.transform.position);
-			Debug.Log(virtualKeyboard.transform.position);
+			//virtualKeyboard.transform.SetPositionAndRotation();
+			// Debug.Log("Direction");
+			// Debug.Log(direction);
+			// Debug.Log(leftHand.transform.position);
+			// Debug.Log(rightHand.transform.position);
+			// Debug.Log(virtualKeyboard.transform.position);
 		}
 
 		if (KeyboardType == 1)
@@ -242,16 +267,17 @@ public class GameManager : MonoBehaviour
 			{
 				physicalKeyboard.SetActive(true);
 
-				float leftPointsDistance = Mathf.Abs(Mathf.Sqrt(Mathf.Pow(leftFKey.x - leftDKey.x, 2) + Mathf.Pow(leftFKey.y - leftDKey.y, 2) + Mathf.Pow(leftFKey.z - leftDKey.z, 2)));
-				float rightPointsDistance = Mathf.Abs(Mathf.Sqrt(Mathf.Pow(rightJKey.x - rightKKey.x, 2) + Mathf.Pow(rightJKey.y - rightKKey.y, 2) + Mathf.Pow(rightJKey.z - rightKKey.z, 2)));
+				// float leftPointsDistance = Mathf.Abs(Mathf.Sqrt(Mathf.Pow(leftFKey.x - leftDKey.x, 2) + Mathf.Pow(leftFKey.y - leftDKey.y, 2) + Mathf.Pow(leftFKey.z - leftDKey.z, 2)));
+				// float rightPointsDistance = Mathf.Abs(Mathf.Sqrt(Mathf.Pow(rightJKey.x - rightKKey.x, 2) + Mathf.Pow(rightJKey.y - rightKKey.y, 2) + Mathf.Pow(rightJKey.z - rightKKey.z, 2)));
 
-				float averageDistance = (leftPointsDistance + rightPointsDistance) / 2;
-
+				//float averageDistance = (leftPointsDistance + rightPointsDistance) / 4;
+				float averageDistance = Mathf.Abs(Mathf.Sqrt(Mathf.Pow(leftFKey.x - rightJKey.x, 2) + Mathf.Pow(leftFKey.y - rightJKey.y, 2) + Mathf.Pow(leftFKey.z - rightJKey.z, 2))) / 5;
+				//float averageDistance = Mathf.Abs(Mathf.Sqrt(Mathf.Pow(rightJKey.x - leftFKey.x, 2) + Mathf.Pow(rightJKey.y - leftFKey.y, 2) + Mathf.Pow(rightJKey.z - leftFKey.z, 2))) / 5;
 				Debug.Log("averageDistance");
 				Debug.Log(averageDistance);
-
+				// Debug.Log($"x distance: {leftFKey.x - leftDKey.x}");
 				// put this back in later
-				physicalKeyboard.GetComponent<CreateKeys>().PlaceKeys(KeyboardType, new Vector3(averageDistance, 0, 0), new Vector3(0, 0, -averageDistance), new Vector3((averageDistance / 2.4f), 0, 0));
+				physicalKeyboard.GetComponent<CreateKeys>().PlaceKeys(KeyboardType, new Vector3(averageDistance, 0, 0), new Vector3(0, 0, -averageDistance), new Vector3(averageDistance / 2.4f, 0, 0));
 			}
 
 			// physicalKeyboard.transform.position = (leftHand.transform.position + rightHand.transform.position) / 2
@@ -260,7 +286,9 @@ public class GameManager : MonoBehaviour
 			physicalKeyboard.transform.position = (leftFKey + rightJKey) / 2;
 
 			// Calculate the direction vector from target1 to target2
-			Vector3 direction = rightJKey - leftFKey;
+			//Vector3 direction = rightJKey - leftFKey;
+			Vector3 direction = rightHand.transform.position - leftHand.transform.position;
+
 			// Calculate the rotation angle based on the direction vector
 			float HorizontalAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 			float TiltedAngle = Mathf.Atan2(direction.z, direction.x) * Mathf.Rad2Deg;

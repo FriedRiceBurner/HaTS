@@ -40,7 +40,7 @@ public class CreateKeys : MonoBehaviour
 	public void PlaceKeys(int KeyboardType, Vector3 keyDistanceX, Vector3 keyDistanceY, Vector3 shiftedRow)
 	{
 		if (keysCreated) return;
-		previousPosition = (-keyDistanceX * 5) - shiftedRow - keyDistanceY;
+		previousPosition = -keyDistanceX * 5 - (keyDistanceX / 3) - shiftedRow - keyDistanceY;
 		//previousPosition = new Vector3(0, 0, 0);
 
 		foreach (string key in topRow)
@@ -54,7 +54,7 @@ public class CreateKeys : MonoBehaviour
 			newKey.name = key + "-key";
 		}
 
-		previousPosition = (-keyDistanceX * 5) - shiftedRow - keyDistanceY + shiftedRow + keyDistanceY;
+		previousPosition = -keyDistanceX * 5 - (keyDistanceX / 3) - shiftedRow - keyDistanceY + shiftedRow + keyDistanceY;
 
 		foreach (string key in homeRow)
 		{
@@ -68,7 +68,7 @@ public class CreateKeys : MonoBehaviour
 			newKey.name = key + "-key";
 		}
 
-		previousPosition = (-keyDistanceX * 5) - shiftedRow - keyDistanceY + shiftedRow * 2.5f + keyDistanceY * 2;
+		previousPosition = -keyDistanceX * 5 - (keyDistanceX / 3) - shiftedRow - keyDistanceY + shiftedRow * 2.5f + keyDistanceY * 2;
 
 		foreach (string key in bottomRow)
 		{
