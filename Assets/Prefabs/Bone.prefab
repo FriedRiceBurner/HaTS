@@ -115,6 +115,7 @@ GameObject:
   - component: {fileID: 3906351058937748034}
   - component: {fileID: 2706302398728818479}
   - component: {fileID: 9180533496530179804}
+  - component: {fileID: -7413311915260209661}
   m_Layer: 0
   m_Name: Bone
   m_TagString: Untagged
@@ -132,7 +133,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.001760711, y: 0.8043839, z: -0.43108392}
-  m_LocalScale: {x: 0.015, y: 0.015, z: 0.015}
+  m_LocalScale: {x: 0.005, y: 0.005, z: 0.005}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7833439798035440467}
@@ -222,6 +223,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boneIdText: {fileID: 2679148810021818080}
+--- !u!114 &-7413311915260209661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2500879300456495556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d952c175ec3c6554199fd744548ce50a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _activeState: {fileID: 0}
+  _interactableFilters: []
+  _candidateTiebreaker: {fileID: 0}
+  _maxIterationsPerFrame: 3
+  _data: {fileID: 0}
+  _pointTransform: {fileID: 1925379320153818685}
+  _radius: 0.005
+  _touchReleaseThreshold: 0.002
+  _equalDistanceThreshold: 0.001
 --- !u!1 &2502463057597388949
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ public class CorrectLayer : MonoBehaviour
     public StringStorage stringStorage;
     // reference to the text mesh pro object
     public TMP_Text text;
+    [SerializeField] private TMP_Text accuracyText;
     // Start is called before the first frame update
     private List<string> listOfChars = new List<string>();
     private List<string> typingListOfChars = new List<string>();
@@ -34,9 +35,13 @@ public class CorrectLayer : MonoBehaviour
     private int tmpWordCount = 0;
     private float tmpTime = 0.0f;
 
+
+    private int correctCount = 0;
+    private int totalCount = 0;
+
     void Start()
     {
-        LiveDebugConsole.Instance.Log("CorrectLayer Start");
+        // LiveDebugConsole.Instance.Log("CorrectLayer Start");
         Instance = this;
         tags.Add(redTag);
         tags.Add(greyTag);
@@ -49,12 +54,21 @@ public class CorrectLayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        float acc = 0.0f;
+        if (totalCount == 0)
+        {
+            acc = 0.0f;
+        }
+        else
+        {
+            acc = (correctCount / (float)totalCount * 100);
+        }
+        accuracyText.text = "Accuracy: " + (acc).ToString("F2") + "%";
     }
 
     private void reset()
     {
-        LiveDebugConsole.Instance.Log("new test started");
+        // LiveDebugConsole.Instance.Log("new test started");
         listOfChars.Clear();
         typingListOfChars.Clear();
         started = false;
@@ -63,6 +77,9 @@ public class CorrectLayer : MonoBehaviour
         isDone = false;
         wordCounts.Clear();
         testTimes.Clear();
+
+        // correctCount = 0;
+        // totalCount = 0;
 
         int randomIndex = Random.Range(0, 5);
         text.text = stringStorage.GetString(randomIndex);
@@ -97,12 +114,15 @@ public class CorrectLayer : MonoBehaviour
             listOfChars.Insert(trueIndex, whiteTag);
             listOfChars.Insert(trueIndex + 2, greyTag);
             trueIndex += 2;
+            correctCount++;
+            totalCount++;
         }
         else
         {
             listOfChars.Insert(trueIndex, redTag);
             listOfChars.Insert(trueIndex + 2, greyTag);
             trueIndex += 2;
+            totalCount++;
         }
 
         typedIndex++;
