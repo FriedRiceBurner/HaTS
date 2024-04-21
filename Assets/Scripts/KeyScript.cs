@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-// using TMPro;
+using TMPro;
 
 public class KeyScript : MonoBehaviour
 {
@@ -9,7 +9,7 @@ public class KeyScript : MonoBehaviour
     public string keyID;
 
     // reference to the text mesh pro object
-    public TMPro.TextMeshPro KeyText;
+    public TMP_Text KeyText;
     // reference to the sound to play on key press
     public AudioSource sound;
 
