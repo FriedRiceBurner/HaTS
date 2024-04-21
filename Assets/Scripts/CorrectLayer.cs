@@ -7,13 +7,18 @@ public class CorrectLayer : MonoBehaviour
 {
     public static CorrectLayer Instance; // Singleton instance
 
+    [SerializeField] private TextTimer textTimer;
+
     // reference to the string storage object
     public StringStorage stringStorage;
     // reference to the text mesh pro object
     public TMP_Text text;
+    [SerializeField] private TMP_Text accuracyText;
     // Start is called before the first frame update
     private List<string> listOfChars = new List<string>();
     private List<string> typingListOfChars = new List<string>();
+    private List<int> wordCounts = new List<int>();
+    private List<float> testTimes = new List<float>();
 
 
     string redTag = "<color=" + "red" + ">";
@@ -22,124 +27,137 @@ public class CorrectLayer : MonoBehaviour
 
     List<string> tags = new List<string>();
 
+    private bool started = false;
+    private int testLength = 1;
+    private int typedIndex = 0;
+    private int trueIndex = 0;
+
+    private int tmpWordCount = 0;
+    private float tmpTime = 0.0f;
+
+
+    private int correctCount = 0;
+    private int totalCount = 0;
 
     void Start()
     {
-        LiveDebugConsole.Instance.Log("CorrectLayer Start");
-        // LiveDebugConsole.Instance.Log("HI".ToLower());
-        // CorrectLayer. 
+        // LiveDebugConsole.Instance.Log("CorrectLayer Start");
         Instance = this;
         tags.Add(redTag);
         tags.Add(greyTag);
         tags.Add(whiteTag);
 
-        int randomIndex = Random.Range(0, 5);
-        text.text = stringStorage.GetString(randomIndex);
-
-        // seperate the string into individual characters, this aids in inline color changes later
-        for (int i = 0; i < stringStorage.GetString(randomIndex).Length; i++)
-        {
-            // Debug.Log(stringStorage.GetString(0).Substring(i, 1));
-            listOfChars.Add(stringStorage.GetString(randomIndex).Substring(i, 1));
-            // Debug.Log(">>>>>>>>>>>>>" + listOfChars.Count);
-        }
-        // Debug.Log(">>>>>>>>>>>>>" + string.Join("", listOfChars));
+        reset();
     }
 
     private bool isDone = false;
     // Update is called once per frame
     void Update()
     {
-        // if (!isDone)
-        // {
-        //     // logic to construct the string with inline color changes
-        //     int typedIndex = 0;
-        //     for (int trueIndex = 0; trueIndex < listOfChars.Count; trueIndex++)
-        //     {
-        //         if (typingListOfChars[typedIndex] == "s" && listOfChars[trueIndex] == "s")
-        //         {
-        //             isDone = true;
-        //             break;
-        //         }
-        //         if (typingListOfChars[typedIndex] == listOfChars[trueIndex])
-        //         {
-        //             listOfChars.Insert(trueIndex, whiteTag);
-        //             listOfChars.Insert(trueIndex + 2, greyTag);
-        //             trueIndex += 2;
-        //         }
-        //         else
-        //         {
-        //             listOfChars.Insert(trueIndex, redTag);
-        //             listOfChars.Insert(trueIndex + 2, greyTag);
-        //             trueIndex += 2;
-        //         }
-
-        //         typedIndex++;
-
-        //         if (typedIndex >= typingListOfChars.Count)
-        //         {
-        //             isDone = true;
-        //             // break;
-        //         }
-        //     }
-
-        //     text.text = string.Join("", listOfChars);
-        // }
-    }
-
-    private int typedIndex = 0;
-    private int trueIndex = 0;
-    public void AddChar(string c)
-    {
-        // if (typingListOfChars[typedIndex] == "s" && listOfChars[trueIndex] == "s")
-        // {
-        //     isDone = true;
-        //     break;
-        // }
-        LiveDebugConsole.Instance.Log("typedIndex: " + typedIndex + " trueIndex: " + trueIndex);
-        // LiveDebugConsole.Instance.Log("in addChar: " + c + " " + typingListOfChars[typedIndex] + " " + listOfChars[trueIndex]);
-        // LiveDebugConsole.Instance.Log(typingListOfChars[typedIndex]);
-        // LiveDebugConsole.Instance.Log(listOfChars[trueIndex]);
-
-        typingListOfChars.Add(c);
-
-        LiveDebugConsole.Instance.Log(typingListOfChars[typedIndex]);
-        LiveDebugConsole.Instance.Log(listOfChars[trueIndex]);
-
-        if (typingListOfChars[typedIndex].ToLower() == listOfChars[trueIndex].ToLower())
+        float acc = 0.0f;
+        if (totalCount == 0)
         {
-            LiveDebugConsole.Instance.Log("match");
-            listOfChars.Insert(trueIndex, whiteTag);
-            listOfChars.Insert(trueIndex + 2, greyTag);
-            trueIndex += 2;
-            // 01  2  3  4     5    6
-            // ju     s             t
-            // ju     d             t
-            // ju<red>d<white><grey>t
+            acc = 0.0f;
         }
         else
         {
-            LiveDebugConsole.Instance.Log("no match");
+            acc = (correctCount / (float)totalCount * 100);
+        }
+        accuracyText.text = "Accuracy: " + (acc).ToString("F2") + "%";
+    }
+
+    private void reset()
+    {
+        // LiveDebugConsole.Instance.Log("new test started");
+        listOfChars.Clear();
+        typingListOfChars.Clear();
+        started = false;
+        typedIndex = 0;
+        trueIndex = 0;
+        isDone = false;
+        wordCounts.Clear();
+        testTimes.Clear();
+
+        // correctCount = 0;
+        // totalCount = 0;
+
+        int randomIndex = Random.Range(0, 5);
+        text.text = stringStorage.GetString(randomIndex);
+
+        // get the amount of words in the string by splitting it by spaces
+        int wordCount = stringStorage.GetString(randomIndex).Split(' ').Length;
+        LiveDebugConsole.Instance.Log("wordCount: " + wordCount);
+        tmpWordCount = wordCount;
+
+        for (int i = 0; i < stringStorage.GetString(randomIndex).Length; i++)
+        {
+            listOfChars.Add(stringStorage.GetString(randomIndex).Substring(i, 1));
+        }
+        testLength = listOfChars.Count;
+        LiveDebugConsole.Instance.Log("testLength: " + testLength);
+
+        textTimer.resetTimer();
+    }
+
+    public void AddChar(string c)
+    {
+        if (started == false)
+        {
+            started = true;
+            textTimer.startTimer();
+        }
+
+        typingListOfChars.Add(c);
+
+        if (typingListOfChars[typedIndex].ToLower() == listOfChars[trueIndex].ToLower())
+        {
+            listOfChars.Insert(trueIndex, whiteTag);
+            listOfChars.Insert(trueIndex + 2, greyTag);
+            trueIndex += 2;
+            correctCount++;
+            totalCount++;
+        }
+        else
+        {
             listOfChars.Insert(trueIndex, redTag);
             listOfChars.Insert(trueIndex + 2, greyTag);
             trueIndex += 2;
+            totalCount++;
         }
 
-        LiveDebugConsole.Instance.Log("before, typedIndex: " + typedIndex + " trueIndex: " + trueIndex);
         typedIndex++;
         trueIndex++;
-        LiveDebugConsole.Instance.Log("after, typedIndex: " + typedIndex + " trueIndex: " + trueIndex);
 
-        if (typedIndex >= typingListOfChars.Count)
+        if (typedIndex >= testLength)
         {
-            LiveDebugConsole.Instance.Log("isDone sety to true");
             isDone = true;
+
+            wordCounts.Add(tmpWordCount);
+
+            testTimes.Add(textTimer.getTime());
+            textTimer.stopTimer();
+
+            updateAvg();
+            reset();
         }
 
-        // LiveDebugConsole.Instance.Log("text: " + string.Join("", listOfChars));
         text.text = string.Join("", listOfChars);
     }
-}
 
-// few      k             ust
-// few <red>j<white><grey>ust fine
+    private void updateAvg()
+    {
+        // sum up all the float values in the testTimes list
+        float timeSum = 0.0f;
+        int wordSum = 0;
+        for (int i = 0; i < wordCounts.Count; i++)
+        {
+            timeSum += testTimes[i];
+            wordSum += wordCounts[i];
+        }
+
+        float timeAvg = timeSum / testTimes.Count;
+        float wordAvg = wordSum / wordCounts.Count;
+        float WPM = wordAvg / timeAvg * 60;
+        textTimer.updateAvg(WPM);
+    }
+}

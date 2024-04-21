@@ -88,7 +88,6 @@ public class CreateKeys : MonoBehaviour
 		spacebarkey.transform.parent = transform;
 		spacebarkey.transform.localPosition = centerMarker + keyDistanceY;
 		spacebarkey.transform.localScale = KeyScales[KeyboardType];
-		previousPosition = new Vector3(centerMarker.x, spacebarkey.transform.localPosition.y, spacebarkey.transform.localPosition.z);
 		spacebarkey.GetComponent<KeyScript>().keyID = " ";
 		spacebarkey.name = "Spacebar";
 

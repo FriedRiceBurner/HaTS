@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _position: {x: 0, y: 0, z: 0}
-  _size: {x: 0.05317964, y: 0.009566448, z: 0.02}
+  _size: {x: 0.1, y: 0.02, z: 0.01}
 --- !u!1 &5238428452134139305
 GameObject:
   m_ObjectHideFlags: 0
