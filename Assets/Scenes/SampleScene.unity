@@ -4071,6 +4071,10 @@ PrefabInstance:
       propertyPath: textTimer
       value: 
       objectReference: {fileID: 2002256041}
+    - target: {fileID: 6938656455733313044, guid: 47aa921f2426a404a84bb4aa2df64a0f, type: 3}
+      propertyPath: accuracyText
+      value: 
+      objectReference: {fileID: 469415326}
     - target: {fileID: 8786837222150087134, guid: 47aa921f2426a404a84bb4aa2df64a0f, type: 3}
       propertyPath: m_SizeDelta.x
       value: 1150
