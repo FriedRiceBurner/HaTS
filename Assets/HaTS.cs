@@ -38,22 +38,38 @@ public class HaTS : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("1"))
         {
             StartCoroutine(Buzz(leftPinkey));
         }
-        if (Input.GetKeyDown("w"))
+        if (Input.GetKeyDown("2"))
         {
             StartCoroutine(Buzz(leftRing));
         }
 
+        if (Input.GetKeyDown("3"))
+        {
+            StartCoroutine(Buzz(leftMiddle));
+        }
+        if (Input.GetKeyDown("4"))
+        {
+            StartCoroutine(Buzz(leftIndex));
+        }
+
+        if (Input.GetKeyDown("5"))
+        {
+            StartCoroutine(Buzz(leftThumb));
+        }
+
+
+
     }
     IEnumerator Buzz(int finger)
     {
-                Debug.Log("made it here");
-                UduinoManager.Instance.digitalWrite(finger, Uduino.State.HIGH);
-                yield return new WaitForSeconds(blinkSpeed);
-                UduinoManager.Instance.digitalWrite(finger, Uduino.State.LOW);
-                yield return new WaitForSeconds(blinkSpeed * 2);
+        Debug.Log("made it here");
+        UduinoManager.Instance.digitalWrite(finger, Uduino.State.HIGH);
+        yield return new WaitForSeconds(blinkSpeed);
+        UduinoManager.Instance.digitalWrite(finger, Uduino.State.LOW);
+        yield return new WaitForSeconds(blinkSpeed * 2);
     }
 }

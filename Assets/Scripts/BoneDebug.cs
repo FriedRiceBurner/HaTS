@@ -7,7 +7,7 @@ public class BoneDebug : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI boneIdText;
     private OVRBone debugBone;
-    
+
     // function to add bone to hand
     public void AddBone(OVRBone bone) => this.debugBone = bone;
 
@@ -16,14 +16,18 @@ public class BoneDebug : MonoBehaviour
     void Update()
     {
         if (debugBone == null) return;
-
-		boneIdText.text = $"{debugBone.Id}";
-		boneIdText.transform.rotation = Quaternion.LookRotation(
+        Debug.Log($"{debugBone.Id}");
+        boneIdText.text = $"{debugBone.Id}";
+        boneIdText.transform.rotation = Quaternion.LookRotation(
             boneIdText.transform.position - Camera.main.transform.position);
 
+        // if(debugBone.Id.contains("Tip")){
+        //     debugBone.GetComponent
+        // }
 
-		transform.position = debugBone.Transform.position;
-		transform.rotation = debugBone.Transform.rotation;
 
-	}
+        transform.position = debugBone.Transform.position;
+        transform.rotation = debugBone.Transform.rotation;
+
+    }
 }
