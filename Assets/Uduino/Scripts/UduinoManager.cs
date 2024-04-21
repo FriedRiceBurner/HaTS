@@ -107,7 +107,8 @@ namespace Uduino
         public bool enable;
     }
 
-    public class UduinoManager : MonoBehaviour {
+    public class UduinoManager : MonoBehaviour
+    {
 
         #region Singleton
         /// <summary>
@@ -118,14 +119,15 @@ namespace Uduino
         /// <value>UduinoManager static instance</value>
         public static UduinoManager Instance
         {
-            get {
+            get
+            {
                 if (_instance != null)
                     return _instance;
 
                 UduinoManager[] uduinoManagers = FindObjectsOfType(typeof(UduinoManager)) as UduinoManager[];
 
 
-                if (uduinoManagers.Length == 0 )
+                if (uduinoManagers.Length == 0)
                 {
                     Log.Warning("UduinoManager not present on the scene. Creating a new one.");
                     UduinoManager manager = new GameObject("Uduino").AddComponent<UduinoManager>();
@@ -137,13 +139,14 @@ namespace Uduino
                     return uduinoManagers[0];
                 }
             }
-            set {
+            set
+            {
                 if (_instance == null)
                     _instance = value;
                 else
                 {
-                   Log.Error("You can only use one UduinoManager. Destroying the new one attached to the GameObject " + value.gameObject.name);
-                   Destroy(value);
+                    Log.Error("You can only use one UduinoManager. Destroying the new one attached to the GameObject " + value.gameObject.name);
+                    Destroy(value);
                 }
             }
         }
@@ -219,7 +222,8 @@ namespace Uduino
         /// </summary>
         [SerializeField]
         private int baudRate = 9600;
-        public int BaudRate {
+        public int BaudRate
+        {
             get { return baudRate; }
             set { baudRate = value; }
         }
@@ -262,11 +266,12 @@ namespace Uduino
         public bool LimitSendRate
         {
             get { return limitSendRate; }
-            set {
+            set
+            {
                 if (limitSendRate == value)
                     return;
-               if (Application.isPlaying)
-               {
+                if (Application.isPlaying)
+                {
                     if (value && !autoSendIsRunning)
                     {
                         Log.Debug("Start auto read");
@@ -279,7 +284,7 @@ namespace Uduino
                         StopCoroutine("AutoSendBundle");
                         autoSendIsRunning = false;
                     }
-               }
+                }
                 limitSendRate = value;
             }
         }
@@ -301,7 +306,7 @@ namespace Uduino
 
         public int defaultArduinoBoardType = 0;
 
-		public bool useCuPort = false;
+        public bool useCuPort = false;
 
         public bool forcePinEditor = false;
 
@@ -382,7 +387,8 @@ namespace Uduino
         /// </summary>
         [SerializeField]
         private List<string> blackListedPorts = new List<string>();
-        public List<string> BlackListedPorts {
+        public List<string> BlackListedPorts
+        {
             get { return blackListedPorts; }
             set { blackListedPorts = value; }
         }
@@ -394,7 +400,7 @@ namespace Uduino
         public class eventValueReceived : UnityEvent<string, UduinoDevice> { }
         [System.Serializable]
         public class eventBoard : UnityEvent<UduinoDevice> { }
-        
+
         [SerializeField]
         public eventValueReceived OnDataReceivedEvent;
 
@@ -435,7 +441,7 @@ namespace Uduino
 
         Platform platformType = Platform.Auto;
         ConnectionMethod connectionMethod = ConnectionMethod.Default;
-        
+
         //BLE Settings
         public bool autoConnectToLastDevice = true;
         public int bleScanDuration = 3;
@@ -482,7 +488,7 @@ namespace Uduino
 
         public void DiscoverWithDelay(float delay = -1)
         {
-           StartCoroutine("DelayedDiscover", delay);
+            StartCoroutine("DelayedDiscover", delay);
         }
 
         IEnumerator DelayedDiscover(float delay = -1)
@@ -493,14 +499,14 @@ namespace Uduino
             {
                 DiscoverPorts();
             }
-            if(autoReconnect)
-             StartCoroutine("RestartIfBoardNotDetected");
+            if (autoReconnect)
+                StartCoroutine("RestartIfBoardNotDetected");
         }
 
         IEnumerator RestartIfBoardNotDetected()
         {
             yield return new WaitForSeconds(autoReconnectDelay);
-           if (uduinoDevices.Count == 0) shouldReconnect = true;
+            if (uduinoDevices.Count == 0) shouldReconnect = true;
         }
 
         public void UpdateManagerState()
@@ -526,7 +532,8 @@ namespace Uduino
             {
                 ManagerState = UduinoManagerState.Discovering;
                 boardConnection.FindBoards(this);
-            } else
+            }
+            else
             {
                 Log.Warning("You didn't select any platform. Disabling Uduino.");
                 this.enabled = false;
@@ -574,9 +581,9 @@ namespace Uduino
             }
             foreach (KeyValuePair<string, UduinoDevice> uduino in uduinoDevices)
             {
-            #if UDUINO_READY
+#if UDUINO_READY
                 Log.Info("" + uduino.Value.getIdentity() + " (" + uduino.Key + ")");
-            #endif
+#endif
             }
         }
 
@@ -630,7 +637,7 @@ namespace Uduino
         /// <param name="device">Board Name</param>
         /// <param name="devices">Output device </param>
         /// <returns>If a board has been found</returns>
-        public bool GetBoard(UduinoDevice device , out UduinoDevice[] devices)
+        public bool GetBoard(UduinoDevice device, out UduinoDevice[] devices)
         {
             if (UduinoTargetExists(device))
             {
@@ -659,7 +666,8 @@ namespace Uduino
                 UduinoDevice device = null;
                 uduinoDevices.TryGetValue(name, out device);
                 return device;
-            } else
+            }
+            else
             {
                 Log.Warning("No board with the name " + name + " is found in the board list.");
                 return null;
@@ -678,8 +686,8 @@ namespace Uduino
                 return true;
             else
             {
-               // if (target != null && target != "" && target != "allBoards")
-                   // Log.Warning("The object " + target + " cannot be found. Are you sure it's connected and correctly detected ?");
+                // if (target != null && target != "" && target != "allBoards")
+                // Log.Warning("The object " + target + " cannot be found. Are you sure it's connected and correctly detected ?");
                 return false;
             }
         }
@@ -740,7 +748,7 @@ namespace Uduino
             else
                 Log.Info("Setting board type to a non-existant board");
         }
-        
+
         /// <summary>
         /// Get the pin from specific board type
         /// </summary>
@@ -770,7 +778,7 @@ namespace Uduino
         /// <returns>Int of the pin</returns>
         public int GetPinFromBoard(string pin)
         {
-            if(uduinoDevices.Count == 0)
+            if (uduinoDevices.Count == 0)
                 return BoardsTypeList.Boards.GetBoardFromId(defaultArduinoBoardType).GetPin(pin);
 
             var e = uduinoDevices.GetEnumerator();
@@ -788,7 +796,7 @@ namespace Uduino
         /// <returns>Int of the pin</returns>
         public int GetPinFromBoard(int pin)
         {
-            return GetPinFromBoard(pin+"");
+            return GetPinFromBoard(pin + "");
         }
 
         /// <summary>
@@ -848,21 +856,23 @@ namespace Uduino
                 if (pinTarget.PinTargetExists(target, pin))
                 {
                     pinExists = true;
-                    if ( pinTarget.pinMode != mode) {
+                    if (pinTarget.pinMode != mode)
+                    {
                         Log.Debug("Override pinMode for the pin <color=#4CAF50>" + pin + "</color> from <color=#2e7d32>" + pinTarget.pinMode + "</color> to <color=#2e7d32>" + mode + "</color>.");
-                        
+
                         // TODO : I think this is useless
                         if ((target == null && uduinoDevices.Count != 0) || (target != null && UduinoTargetExists(target)))
                         {
                             pinTarget.OverridePinMode(mode);
-                         //   Debug.Log("start");
+                            //   Debug.Log("start");
                         }
                         else
                         {
                             pinTarget.OverridePinMode(mode, true);
-                           // Debug.Log("stop");
+                            // Debug.Log("stop");
                         }
-                    } else
+                    }
+                    else
                     {
                         Log.Debug("pinMode of <color=#4CAF50>" + pin + "</color> already set to <color=#2e7d32>" + mode + "</color>");
                     }
@@ -879,7 +889,8 @@ namespace Uduino
                 {
                     Log.Debug("Set pinMode of <color=#4CAF50>" + pin + "</color>" + arduinoTarget + "to <color=#2e7d32>" + mode + "</color>");
                     newPin.Init();
-                } else
+                }
+                else
                 {
                     Log.Debug("Added to queue PinMode of <color=#4CAF50>" + pin + "</color>" + arduinoTarget + "to <color=#2e7d32>" + mode + "</color>");
                 }
@@ -893,8 +904,8 @@ namespace Uduino
         /// <returns></returns>
         int PinValueToBoardValue(AnalogPin pin, int boardType = -1)
         {
-            if(boardType == -1) boardType = defaultArduinoBoardType;
-           return BoardsTypeList.Boards.GetBoardFromId(boardType).GetPin(Enum.GetName(pin.GetType(), pin));
+            if (boardType == -1) boardType = defaultArduinoBoardType;
+            return BoardsTypeList.Boards.GetBoardFromId(boardType).GetPin(Enum.GetName(pin.GetType(), pin));
         }
 
         //TODO : Add old delegate as obsolete
@@ -930,7 +941,7 @@ namespace Uduino
         /// </summary>
         public void InitAllPins()
         {
-            foreach(Pin pin in pins)
+            foreach (Pin pin in pins)
             {
                 pin.Init(true);
             }
@@ -950,7 +961,7 @@ namespace Uduino
 
         public void InitAllArduinos()
         {
-         //   InitAllBoardType();
+            //   InitAllBoardType();
             InitAllPins();
             InitAllCallbacks();
         }
@@ -1004,7 +1015,7 @@ namespace Uduino
         {
             if (value <= 150) value = 0;
             else value = 255;
-            arduinoWrite(target,pin,value,"d", bundle);
+            arduinoWrite(target, pin, value, "d", bundle);
         }
 
 
@@ -1021,7 +1032,7 @@ namespace Uduino
         /// </summary>
         public void digitalWrite(int pin, State state = State.LOW, string bundle = null)
         {
-            arduinoWrite(null, pin, (int)state * 255,"d", bundle);
+            arduinoWrite(null, pin, (int)state * 255, "d", bundle);
         }
 
         /// <summary>
@@ -1130,8 +1141,8 @@ namespace Uduino
             {
                 if (pinTarget.PinTargetExists(target, pin))
                 {
-                  //  Debug.LogError("There is a problem here !! On recoit une valeur de pin a laquelle on ne s'attends pas.");
-                  pinTarget.lastReadValue = readVal;
+                    //  Debug.LogError("There is a problem here !! On recoit une valeur de pin a laquelle on ne s'attends pas.");
+                    pinTarget.lastReadValue = readVal;
                 }
             }
             return readVal;
@@ -1158,13 +1169,13 @@ namespace Uduino
 
             if (bundle != null)
             {
-                if(GetBoard(target,out devices))
+                if (GetBoard(target, out devices))
                 {
-                    foreach(UduinoDevice device in devices)
+                    foreach (UduinoDevice device in devices)
                     {
                         device.callback = action;
                         device.AddToBundle(message, bundle);
-                        readVal =  device.lastRead;
+                        readVal = device.lastRead;
                     }
                 }
             }
@@ -1227,7 +1238,7 @@ namespace Uduino
         /// <param name="message">Variable watched, if defined</param>
         /// <param name="action">Action callback</param>
         /// <param name="bundle">Bundle name if any</param>
-        public string DirectReadFromArduino(UduinoDevice targetDevice = null, string message = null,  Action<string> action = null, string bundle = null)
+        public string DirectReadFromArduino(UduinoDevice targetDevice = null, string message = null, Action<string> action = null, string bundle = null)
         {
             string val = "";
             UduinoDevice[] devices;
@@ -1253,7 +1264,7 @@ namespace Uduino
         }
 
         //TODO : Too much overload ? Bundle ? 
-        public void Read(int pin, string target = null, Action<string> action = null) 
+        public void Read(int pin, string target = null, Action<string> action = null)
         {
             DirectReadFromArduino(action: action);
         }
@@ -1314,18 +1325,20 @@ namespace Uduino
         /// <param name="value">Optional value</param>
         public void sendCommand(UduinoDevice target, string command, params object[] value)
         {
-            if(target == null)
+            if (target == null)
             {
                 foreach (KeyValuePair<string, UduinoDevice> uduino in uduinoDevices)
                     uduino.Value.WriteToArduino(command, BuildMessageParameters(value));
-            } else
+            }
+            else
             {
                 target.WriteToArduino(command, BuildMessageParameters(value));
             }
         }
 
         [System.Obsolete("UduinoManager.Write() is deprecated, please use sendCommand() instead.")]
-        public void Write(string target, string command, params object[] value) {
+        public void Write(string target, string command, params object[] value)
+        {
             sendCommand(GetBoard(target), command, value);
         }
 
@@ -1344,7 +1357,7 @@ namespace Uduino
         {
             string outputMessage = null;
 
-            for(int i =0;i < parameters.Length;i++)
+            for (int i = 0; i < parameters.Length; i++)
             {
                 outputMessage += parameters[i];
                 if (i != parameters.Length - 1)
@@ -1367,7 +1380,8 @@ namespace Uduino
                 {
                     device.callback = callback;
                 }
-            } else
+            }
+            else
             {
                 string targetName = "";
                 if (target != null)
@@ -1448,7 +1462,7 @@ namespace Uduino
             bool isPresent = false;
             bool isActive = false;
             presentExtentionsMap.TryGetValue(extensionName, out isPresent);
-            if(isPresent)
+            if (isPresent)
                 activeExtentionsMap.TryGetValue(extensionName, out isActive);
 
             return isPresent && isActive;
@@ -1499,7 +1513,7 @@ namespace Uduino
             {
                 try
                 {
-                    if(isForced)
+                    if (isForced)
                     {
                         Log.Warning("Resarting Thread");
                         threadRestartTrials++;
@@ -1531,7 +1545,7 @@ namespace Uduino
         {
             return threadRunning;
         }
-        
+
         void Update()
         {
             //Async Call
@@ -1554,11 +1568,11 @@ namespace Uduino
                 StartThread(true);
             }
 
-            if(!ExtensionIsPresentAndActive("UduinoDevice_DesktopBluetoothLE") && autoReconnect && shouldReconnect)
+            if (!ExtensionIsPresentAndActive("UduinoDevice_DesktopBluetoothLE") && autoReconnect && shouldReconnect)
             {
                 StartCoroutine("DiscoverWithDelay", autoReconnectDelay);
                 shouldReconnect = false;
-                Log.Warning("No Board detected. Reconnecting in " + autoReconnectDelay  + " seconds.");
+                Log.Warning("No Board detected. Reconnecting in " + autoReconnectDelay + " seconds.");
             }
         }
 
@@ -1593,7 +1607,7 @@ namespace Uduino
         /// <param name="target"></param>
         public void ReadWriteArduino(UduinoDevice target)
         {
-            if(target != null)
+            if (target != null)
             {
                 target.WriteToArduinoLoop();
                 target.ReadFromArduinoLoop();
@@ -1627,7 +1641,7 @@ namespace Uduino
                 if (limitSendRate)
                     yield return new WaitForSeconds(sendRateDelay / 1000.0f);
                 else
-                    yield return new WaitForSeconds(threadIdleDelay/1000.0f);
+                    yield return new WaitForSeconds(threadIdleDelay / 1000.0f);
             }
         }
 
@@ -1675,7 +1689,7 @@ namespace Uduino
         {
             if (uduinoDevices.Count == 0)
             {
-               // Log.Debug("No boards are connected.");
+                // Log.Debug("No boards are connected.");
                 return;
             }
 
@@ -1728,7 +1742,7 @@ namespace Uduino
 
                 uduinoDevices.Remove(device.name);
 
-                if(uduinoDevices.Count == 0)
+                if (uduinoDevices.Count == 0)
                     ManagerState = UduinoManagerState.Idle;
 
                 if (!isApplicationQuiting && uduinoDevices.Count == 0)
@@ -1791,10 +1805,10 @@ namespace Uduino
                 _thread = null;
             }
         }
-#endregion
+        #endregion
     }
 
-#region Version
+    #region Version
     public static class UduinoVersion
     {
         static int major = 3;
@@ -1812,9 +1826,9 @@ namespace Uduino
             return update;
         }
     }
-#endregion
+    #endregion
 
-#region Utils 
+    #region Utils 
     [Serializable]
     public class SerializableDictionary<TKey, TValue> : Dictionary<TKey, TValue>, ISerializationCallbackReceiver
     {
@@ -1851,5 +1865,5 @@ namespace Uduino
 
     [Serializable] public class IsPresentDictionnary : SerializableDictionary<string, bool> { }
     [Serializable] public class IsActiveDictionnary : SerializableDictionary<string, bool> { }
-#endregion
+    #endregion
 }
