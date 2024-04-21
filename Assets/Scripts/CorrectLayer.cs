@@ -86,7 +86,7 @@ public class CorrectLayer : MonoBehaviour
 
         // get the amount of words in the string by splitting it by spaces
         int wordCount = stringStorage.GetString(randomIndex).Split(' ').Length;
-        LiveDebugConsole.Instance.Log("wordCount: " + wordCount);
+        // LiveDebugConsole.Instance.Log("wordCount: " + wordCount);
         tmpWordCount = wordCount;
 
         for (int i = 0; i < stringStorage.GetString(randomIndex).Length; i++)
@@ -94,7 +94,7 @@ public class CorrectLayer : MonoBehaviour
             listOfChars.Add(stringStorage.GetString(randomIndex).Substring(i, 1));
         }
         testLength = listOfChars.Count;
-        LiveDebugConsole.Instance.Log("testLength: " + testLength);
+        // LiveDebugConsole.Instance.Log("testLength: " + testLength);
 
         textTimer.resetTimer();
     }
