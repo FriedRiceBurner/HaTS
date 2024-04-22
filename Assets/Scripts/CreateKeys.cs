@@ -26,9 +26,9 @@ public class CreateKeys : MonoBehaviour
 	private Vector3 centerMarker;
 
 	//distance from center of each key to next
-	// Vector3 keyDistanceX = new Vector3(0.01905f, 0, 0);
-	// Vector3 keyDistanceY = new Vector3(0, 0, -0.01905f);
-	// Vector3 shiftedRow = new Vector3(0.0079375f, 0, 0);
+	private Vector3 keyDistanceX = new Vector3(0.01905f, 0, 0);
+	private Vector3 keyDistanceY = new Vector3(0, 0, -0.01905f);
+	private Vector3 shiftedRow = new Vector3(0.0079375f, 0, 0);
 
 	// virtual vs physical keyboard overlay
 	private Vector3[] KeyScales = {
@@ -39,7 +39,7 @@ public class CreateKeys : MonoBehaviour
 	// Start is called before the first frame update
 	public void PlaceKeys(int KeyboardType, Vector3 keyDistanceX, Vector3 keyDistanceY, Vector3 shiftedRow)
 	{
-		if (keysCreated) return;
+		//if (keysCreated) return;
 		previousPosition = -keyDistanceX * 5 - (keyDistanceX / 3) - shiftedRow - keyDistanceY;
 		//previousPosition = new Vector3(0, 0, 0);
 
@@ -88,6 +88,7 @@ public class CreateKeys : MonoBehaviour
 		spacebarkey.transform.parent = transform;
 		spacebarkey.transform.localPosition = centerMarker + keyDistanceY;
 		spacebarkey.transform.localScale = KeyScales[KeyboardType];
+		previousPosition = new Vector3(centerMarker.x, spacebarkey.transform.localPosition.y, spacebarkey.transform.localPosition.z);
 		spacebarkey.GetComponent<KeyScript>().keyID = " ";
 		spacebarkey.name = "Spacebar";
 

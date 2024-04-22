@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 145406956392636607}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: 0, y: 0.0025, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.00158, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9191145630321218479}
@@ -247,6 +247,7 @@ GameObject:
   - component: {fileID: 7710556835606405339}
   - component: {fileID: -1318879344029365121}
   - component: {fileID: 1242319426705969668}
+  - component: {fileID: 1041376804193551960}
   m_Layer: 0
   m_Name: PokeKeycapPrefab
   m_TagString: Untagged
@@ -263,7 +264,7 @@ Transform:
   m_GameObject: {fileID: 6643353432224216487}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.059, z: 0.511}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -601,6 +602,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &1041376804193551960
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6643353432224216487}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.008, y: 0.005, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7142323650678331677
 GameObject:
   m_ObjectHideFlags: 0

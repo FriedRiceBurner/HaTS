@@ -12,12 +12,24 @@ public class BoneDebug : MonoBehaviour
     // function to add bone to hand
     public void AddBone(OVRBone bone) => this.debugBone = bone;
 
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("this finger hit a key");
+        Debug.Log(debugBone.Id);
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        Debug.Log("this finger hit a key");
+        Debug.Log(debugBone.Id);
+
+    }
 
     // Update is called once per frame
     void Update()
     {
         if (debugBone == null) return;
-        Debug.Log($"{debugBone.Id}");
+        // Debug.Log($"{debugBone.Id}");
         boneIdText.text = $"{debugBone.Id}";
         boneIdText.transform.rotation = Quaternion.LookRotation(
             boneIdText.transform.position - Camera.main.transform.position);

@@ -64,7 +64,7 @@ public class HaTS : MonoBehaviour
 
 
     }
-    IEnumerator Buzz(int finger)
+    public IEnumerator Buzz(int finger)
     {
         Debug.Log("made it here");
         UduinoManager.Instance.digitalWrite(finger, Uduino.State.HIGH);

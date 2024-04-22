@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyID: ' '
-  KeyText: {fileID: 0}
+  KeyText: {fileID: 4123279674418218457}
   sound: {fileID: -8491612294395178243}
 --- !u!82 &-8491612294395178243
 AudioSource:

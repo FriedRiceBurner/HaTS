@@ -130,6 +130,10 @@ public class GameManager : MonoBehaviour
 			if (virtualKeyboard.activeSelf)
 			{
 				virtualKeyboard.SetActive(false);
+				foreach (Transform child in virtualKeyboard.transform)
+				{
+					Destroy(child.gameObject);
+				}
 				functionInProgress = false;
 
 				return;
@@ -137,6 +141,11 @@ public class GameManager : MonoBehaviour
 			if (physicalKeyboard.activeSelf)
 			{
 				physicalKeyboard.SetActive(false);
+				foreach (Transform child in physicalKeyboard.transform)
+				{
+					Destroy(child.gameObject);
+				}
+
 				functionInProgress = false;
 
 				return;
@@ -236,7 +245,7 @@ public class GameManager : MonoBehaviour
 			//float placementMagnitude = virtualKeyboard.GetComponent<CreateKeys>().topRow.Count() * 0.01905f;
 
 			virtualKeyboard.transform.position = (leftHand.transform.position + rightHand.transform.position) / 2
-			 										+ new Vector3(leftHand.transform.position.x / 2, -0.04f, leftHand.transform.position.z) / 2;
+			 										+ new Vector3(leftHand.transform.position.x / 2, -0.03f, leftHand.transform.position.z) / 2;
 
 			// Calculate the direction vector from target1 to target2
 			Vector3 direction = rightHand.transform.position - leftHand.transform.position;
@@ -286,8 +295,8 @@ public class GameManager : MonoBehaviour
 			physicalKeyboard.transform.position = (leftFKey + rightJKey) / 2;
 
 			// Calculate the direction vector from target1 to target2
-			//Vector3 direction = rightJKey - leftFKey;
-			Vector3 direction = rightHand.transform.position - leftHand.transform.position;
+			Vector3 direction = rightJKey - leftFKey;
+			//Vector3 direction = rightHand.transform.position - leftHand.transform.position;
 
 			// Calculate the rotation angle based on the direction vector
 			float HorizontalAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
