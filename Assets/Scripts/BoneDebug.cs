@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Oculus.Interaction;
 using TMPro;
 using UnityEngine;
 
@@ -21,8 +22,9 @@ public class BoneDebug : MonoBehaviour
         boneIdText.transform.rotation = Quaternion.LookRotation(
             boneIdText.transform.position - Camera.main.transform.position);
 
-        // if(debugBone.Id.contains("Tip")){
-        //     debugBone.GetComponent
+        // if (debugBone.Id.ToString().Contains("Tip"))
+        // {
+        //     debugBone.Transform.GetComponent<PokeInteractor>().Enable();
         // }
 
 

@@ -26,9 +26,9 @@ public class CreateKeys : MonoBehaviour
 	private Vector3 centerMarker;
 
 	//distance from center of each key to next
-	Vector3 keyDistanceX = new Vector3(0.01905f, 0, 0);
-	Vector3 keyDistanceY = new Vector3(0, 0, -0.01905f);
-	Vector3 shiftedRow = new Vector3(0.0079375f, 0, 0);
+	// Vector3 keyDistanceX = new Vector3(0.01905f, 0, 0);
+	// Vector3 keyDistanceY = new Vector3(0, 0, -0.01905f);
+	// Vector3 shiftedRow = new Vector3(0.0079375f, 0, 0);
 
 	// virtual vs physical keyboard overlay
 	private Vector3[] KeyScales = {
