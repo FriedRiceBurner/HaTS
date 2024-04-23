@@ -9,21 +9,15 @@ public class BoneDebug : MonoBehaviour
     [SerializeField] private TextMeshProUGUI boneIdText;
     private OVRBone debugBone;
 
+    // public PokeInteractor leftPoker;
+    // public PokeInteractor rightPoker;
+    void Start()
+    {
+        // leftPoker = GetComponentInParent<PokeInteractor>();
+    }
+
     // function to add bone to hand
     public void AddBone(OVRBone bone) => this.debugBone = bone;
-
-    void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("this finger hit a key");
-        Debug.Log(debugBone.Id);
-    }
-
-    void OnCollisionEnter(Collision other)
-    {
-        Debug.Log("this finger hit a key");
-        Debug.Log(debugBone.Id);
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -42,6 +36,5 @@ public class BoneDebug : MonoBehaviour
 
         transform.position = debugBone.Transform.position;
         transform.rotation = debugBone.Transform.rotation;
-
     }
 }

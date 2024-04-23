@@ -66,7 +66,7 @@ public class HaTS : MonoBehaviour
     }
     public IEnumerator Buzz(int finger)
     {
-        Debug.Log("made it here");
+        //Debug.Log("made it here");
         UduinoManager.Instance.digitalWrite(finger, Uduino.State.HIGH);
         yield return new WaitForSeconds(blinkSpeed);
         UduinoManager.Instance.digitalWrite(finger, Uduino.State.LOW);

@@ -4,13 +4,16 @@ using UnityEngine;
 using TMPro;
 using System;
 using System.IO.Ports;
+using Oculus.Interaction;
+using Oculus.Interaction.Input;
+using Oculus.Interaction.HandGrab;
+using Oculus.Interaction.Collections;
+using System.Linq;
 
 public class KeyScript : MonoBehaviour
 {
     [SerializeField] GameObject lefthand;
     [SerializeField] GameObject righthand;
-    [SerializeField] GameObject HATS;
-
     public string keyID;
 
     // reference to the text mesh pro object
@@ -19,13 +22,14 @@ public class KeyScript : MonoBehaviour
     public AudioSource sound;
 
     private GameObject correctLayer;
+    PokeInteractor poker;
+    private HaTS hats;
 
     // Start is called before the first frame update
     void Start()
     {
         KeyText.SetText(keyID);
         GameObject correctLayer = GameObject.Find("Typing Test");
-
     }
 
     // Update is called once per frame
@@ -34,59 +38,95 @@ public class KeyScript : MonoBehaviour
 
     }
 
+    //check the passed in string to see which finger was used, hand that the finger is attached to
+    private void CheckFinger(string input, string hand)
+    {
+        input = input.ToLower();
+        // Debug.Log(input);
+        switch (input)
+        {
+            case string s when s.Contains("pinky"):
+                if (hand.Contains("left"))
+                {
+                    StartCoroutine(hats.GetComponent<HaTS>().Buzz(hats.leftPinkey));
+                }
+                else
+                {
+                    StartCoroutine(hats.GetComponent<HaTS>().Buzz(hats.rightPinkey));
+                }
+
+                return;
+            case string s when s.Contains("ring"):
+                if (hand.Contains("left"))
+                {
+                    StartCoroutine(hats.GetComponent<HaTS>().Buzz(hats.leftRing));
+                }
+                else
+                {
+                    StartCoroutine(hats.GetComponent<HaTS>().Buzz(hats.rightRing));
+                }
+
+                return;
+            case string s when s.Contains("middle"):
+                if (hand.Contains("left"))
+                {
+                    StartCoroutine(hats.GetComponent<HaTS>().Buzz(hats.leftMiddle));
+                }
+                else
+                {
+                    StartCoroutine(hats.GetComponent<HaTS>().Buzz(hats.rightMiddle));
+                }
+
+                return;
+            case string s when s.Contains("index"):
+                if (hand.Contains("left"))
+                {
+                    StartCoroutine(hats.GetComponent<HaTS>().Buzz(hats.leftIndex));
+                }
+                else
+                {
+                    StartCoroutine(hats.GetComponent<HaTS>().Buzz(hats.rightIndex));
+
+                }
+
+                return;
+            case string s when s.Contains("thumb"):
+                if (hand.Contains("left"))
+                {
+                    StartCoroutine(hats.GetComponent<HaTS>().Buzz(hats.leftThumb));
+                }
+                else
+                {
+                    StartCoroutine(hats.GetComponent<HaTS>().Buzz(hats.rightThumb));
+                }
+
+                return;
+        }
+    }
     public void pressed()
     {
-        // GameObject chosenfinger;
-        // for now just log the key pressed
-        // LiveDebugConsole.Instance.Log("Key pressed: " + KeyText.text);
-        // play the sound
-        // float closestDistance = float.PositiveInfinity;
-        // foreach (GameObject bone in lefthand.transform)
-        // {
-        //     float distance = Vector3.Distance(transform.position, bone.transform.position);
+        hats = transform.parent.GetComponent<HandDebugManager>().hatsHolder;
+        // Debug.Log("transform.parent.name");
+        // Debug.Log(transform.parent.name);
+        // Debug.Log(hats.blinkSpeed);
 
-        //     if (distance < closestDistance)
-        //     {
-        //         closestDistance = distance;
-        //         chosenfinger = bone;
-        //     }
-        // }
-        // foreach (GameObject bone in righthand.transform)
-        // {
-        //     float distance = Vector3.Distance(transform.position, bone.transform.position);
+        // Debug.Log("poke stuff");
+        // Debug.Log(keyID);
 
-        //     if (distance < closestDistance)
-        //     {
-        //         closestDistance = distance;
-        //         chosenfinger = bone;
-        //     }
-        // }
+        //get the object that interacted with the key 
+        poker = GetComponent<PokeInteractable>().Interactors.First();
+        if (poker.transform.parent.parent.parent.parent.parent.parent.parent.name.ToLower().Contains("left"))
+        {
+            CheckFinger(poker.transform.parent.name.ToLower(), "left");
+            // Debug.Log("left hand");
+        }
+        else
+        {
+            CheckFinger(poker.transform.parent.name.ToLower(), "right");
+            // Debug.Log("right hand");
 
-        // if (Input.GetKeyDown("1"))
-        // {
-        //     StartCoroutine(Buzz(leftPinkey));
-        // }
-        // if (Input.GetKeyDown("2"))
-        // {
-        //     StartCoroutine(Buzz(leftRing));
-        // }
+        }
 
-        // if (Input.GetKeyDown("3"))
-        // {
-        //     StartCoroutine(Buzz(leftMiddle));
-        // }
-        // if (Input.GetKeyDown("4"))
-        // {
-        //     StartCoroutine(Buzz(leftIndex));
-        // }
-
-        // if (Input.GetKeyDown("5"))
-        // {
-        //     StartCoroutine(Buzz(leftThumb));
-        // }
-
-
-        //HATS.GetComponent<HaTS>().Buzz(1);
         sound.Play();
         // LiveDebugConsole.Instance.Log("Key pressed: " + KeyText.text);
 

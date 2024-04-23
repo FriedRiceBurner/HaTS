@@ -15,8 +15,8 @@ public class DebugHandBoneDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(!hand) hand = GetComponent<OVRHand>();
-        if(!handSkel) handSkel = GetComponent<OVRSkeleton>();
+        if (!hand) hand = GetComponent<OVRHand>();
+        if (!handSkel) handSkel = GetComponent<OVRSkeleton>();
 
     }
     private void CreateBones()
@@ -24,9 +24,24 @@ public class DebugHandBoneDisplay : MonoBehaviour
 
         foreach (var bone in handSkel.Bones)
         {
-            Instantiate(bonePrefab, bone.Transform).GetComponent<BoneDebug>().AddBone(bone);
+            // Debug.Log(bone.Id.ToString());
+            // Debug.Log(bone.Id.ToString().ToLower());
+            // Debug.Log(bone.Id.ToString().ToLower().Contains("tip"));
+
+            if (bone.Id.ToString().ToLower().Contains("tip") ||
+                bone.Id.ToString().ToLower().Contains("metacarpal") ||
+                bone.Id.ToString().ToLower().Contains("skinnable"))
+            {
+                // Debug.Log("made it");
+                Instantiate(bonePrefab, bone.Transform).GetComponent<BoneDebug>().AddBone(bone);
+            }
+            // GameObject newBone = Instantiate(bonePrefab, bone.Transform);
+            // newBone.GetComponent<BoneDebug>().AddBone(bone);
+            // // newBone.name = newBone.transform.parent.name;
+            // newBone.name = bone.Id.ToString();
+
         }
-		boneAdded = true;
+        boneAdded = true;
     }
 
 

@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5947648958155461125
 Transform:
   m_ObjectHideFlags: 0
@@ -45,8 +45,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f803e1d69f91538408b91e4a633892c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyPrefab: {fileID: 7634374519374736487, guid: f0a6639db2288af4fb5f2023f7aed9bb, type: 3}
+  keyPrefab: {fileID: 6643353432224216487, guid: 01f933f6e11daa542970403d8a8ce4ef, type: 3}
+  SpacebarPrefab: {fileID: 990653039258734233, guid: b60ff415dda0c6c42ae18a2918c9ab80, type: 3}
   KeyboardType: 1
+  topRow:
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - '[ {'
+  - '] }'
 --- !u!114 &6702442532795340777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,3 +78,4 @@ MonoBehaviour:
   rightHand: {fileID: 0}
   leftSkel: {fileID: 0}
   rightSkel: {fileID: 0}
+  hatsHolder: {fileID: 0}

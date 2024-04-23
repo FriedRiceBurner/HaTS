@@ -12,16 +12,17 @@ public class HandDebugManager : MonoBehaviour
 	[SerializeField] private OVRSkeleton leftSkel;
 	[SerializeField] private OVRSkeleton rightSkel;
 
+	public HaTS hatsHolder;
 
 	// Start is called before the first frame update
 	void Start()
-    {
+	{
 
 	}
 
 	// Update is called once per frame
 	void Update()
-    {
+	{
 #if UNITY_EDITOR
 
 		//foreach (var bone in leftSkel.Bones)
@@ -34,7 +35,7 @@ public class HandDebugManager : MonoBehaviour
 		//		$"{rightSkel.GetSkeletonType()}: num of skinnable bones -> {rightSkel.GetCurrentNumSkinnableBones()} \n" +
 		//		$"{rightSkel.GetSkeletonType()}: start bone id -> {rightSkel.GetCurrentStartBoneId()} \n" +
 		//		$"{rightSkel.GetSkeletonType()}: end bones id -> {rightSkel.GetCurrentEndBoneId()}\n";
-			
+
 		//	//HandDebugConsole.SetText(lefthandstring + righthandstring);
 		//	//Body_LeftHandThumbTip
 		//	//Debug.Log(lefthandstring + righthandstring);

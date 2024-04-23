@@ -503,6 +503,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 334f243bf0888e8478d1493b04d7ec58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lefthand: {fileID: 0}
+  righthand: {fileID: 0}
   keyID: J
   KeyText: {fileID: 1582388317973512029}
   sound: {fileID: 1242319426705969668}

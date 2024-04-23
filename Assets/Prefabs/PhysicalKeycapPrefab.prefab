@@ -775,6 +775,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 334f243bf0888e8478d1493b04d7ec58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lefthand: {fileID: 0}
+  righthand: {fileID: 0}
+  HATS: {fileID: 0}
   keyID: 
   KeyText: {fileID: 1279706794683608379}
   sound: {fileID: 8223500447371564149}

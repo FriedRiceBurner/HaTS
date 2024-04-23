@@ -101,8 +101,8 @@ public class GameManager : MonoBehaviour
 		//used for physical key confirmation
 		if (isRightMiddleFingerPinching && !isLeftMiddleFingerPinching && functionInProgress && checkingLeftHand)
 		{
-			Debug.Log("right middle");
-			Debug.Log(checkingLeftHand);
+			// Debug.Log("right middle");
+			// Debug.Log(checkingLeftHand);
 
 			leftKeyLock = true;
 			checkingLeftHand = false;
@@ -111,8 +111,8 @@ public class GameManager : MonoBehaviour
 
 		if (!isRightMiddleFingerPinching && isLeftMiddleFingerPinching && functionInProgress && checkingRighttHand)
 		{
-			Debug.Log("left middle");
-			Debug.Log(checkingRighttHand);
+			// Debug.Log("left middle");
+			// Debug.Log(checkingRighttHand);
 
 			rightKeyLock = true;
 			checkingRighttHand = false;
@@ -129,22 +129,23 @@ public class GameManager : MonoBehaviour
 
 			if (virtualKeyboard.activeSelf)
 			{
-				virtualKeyboard.SetActive(false);
 				foreach (Transform child in virtualKeyboard.transform)
 				{
 					Destroy(child.gameObject);
 				}
+				virtualKeyboard.SetActive(false);
+
 				functionInProgress = false;
 
 				return;
 			}
 			if (physicalKeyboard.activeSelf)
 			{
-				physicalKeyboard.SetActive(false);
 				foreach (Transform child in physicalKeyboard.transform)
 				{
 					Destroy(child.gameObject);
 				}
+				physicalKeyboard.SetActive(false);
 
 				functionInProgress = false;
 
@@ -166,11 +167,7 @@ public class GameManager : MonoBehaviour
 		if (isLeftRingFingerPinching && isRightRingFingerPinching && !functionInProgress)
 		{
 			functionInProgress = true;
-
-
 			StartCoroutine(TrackLeftKeys());
-
-
 		}
 
 	}
@@ -182,7 +179,7 @@ public class GameManager : MonoBehaviour
 		// Debug.Log("Place left hand on ASDF and pinch right middle finger and thumb");
 		yield return new WaitForSeconds(2);
 
-		Debug.Log(leftMiddleFingerPinchStrength);
+		// Debug.Log(leftMiddleFingerPinchStrength);
 		checkingLeftHand = true;
 		while (!leftKeyLock)
 		{
@@ -237,15 +234,24 @@ public class GameManager : MonoBehaviour
 		{
 			if (!virtualKeyboard.activeSelf)
 			{
+				float defaultValue = 0.01905f / 1.5f;
+				float rowShiftValue = 0.0079375f / 1.5f;
 				virtualKeyboard.SetActive(true);
-				virtualKeyboard.GetComponent<CreateKeys>().PlaceKeys(KeyboardType, new Vector3(0.01905f, 0, 0), new Vector3(0, 0, -0.01905f), new Vector3(0.0079375f, 0, 0));
+				virtualKeyboard.GetComponent<CreateKeys>().PlaceKeys(KeyboardType, new Vector3(defaultValue, 0, 0), new Vector3(0, 0, -defaultValue), new Vector3(rowShiftValue, 0, 0));
 
 			}
 
 			//float placementMagnitude = virtualKeyboard.GetComponent<CreateKeys>().topRow.Count() * 0.01905f;
+			Vector3 leftMiddle = leftHandGameObject.transform.FindChildRecursive(OVRSkeleton.BoneId.Body_LeftHandMiddleTip.ToString().Insert(4 + 13, "_").Substring(13)).Find("Bone(Clone)").transform.position;
+			Vector3 rightMiddle = rightHandGameObject.transform.FindChildRecursive(OVRSkeleton.BoneId.Body_RightHandMiddleTip.ToString().Insert(14, "_").Substring(10)).Find("Bone(Clone)").position;
 
-			virtualKeyboard.transform.position = (leftHand.transform.position + rightHand.transform.position) / 2
-			 										+ new Vector3(leftHand.transform.position.x / 2, -0.03f, leftHand.transform.position.z) / 2;
+			// virtualKeyboard.transform.position = (leftHand.transform.position + rightHand.transform.position) / 2
+			//  										+ new Vector3(0, -0.03f, 0) / 2;
+			Vector3 fingerSum = leftMiddle + rightMiddle;
+			float yhandSum = leftHand.transform.position.y + rightHand.transform.position.y;
+
+			virtualKeyboard.transform.position = fingerSum / 2
+			 										+ new Vector3(0, -(fingerSum.y - yhandSum), 0) / 1.7f;
 
 			// Calculate the direction vector from target1 to target2
 			Vector3 direction = rightHand.transform.position - leftHand.transform.position;
@@ -292,7 +298,7 @@ public class GameManager : MonoBehaviour
 			// physicalKeyboard.transform.position = (leftHand.transform.position + rightHand.transform.position) / 2
 			// 											+ new Vector3(leftHand.transform.position.x, -0.03f, leftHand.transform.position.z / 2);
 
-			physicalKeyboard.transform.position = (leftFKey + rightJKey) / 2;
+			physicalKeyboard.transform.position = (leftFKey + rightJKey) / 2 + new Vector3(0, -0.007f, 0);
 
 			// Calculate the direction vector from target1 to target2
 			Vector3 direction = rightJKey - leftFKey;
