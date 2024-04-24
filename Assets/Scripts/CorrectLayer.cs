@@ -2,23 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.IO;
 
 public class CorrectLayer : MonoBehaviour
 {
     public static CorrectLayer Instance; // Singleton instance
-
     [SerializeField] private TextTimer textTimer;
-
-    // reference to the string storage object
     public StringStorage stringStorage;
-    // reference to the text mesh pro object
     public TMP_Text text;
     [SerializeField] private TMP_Text accuracyText;
-    // Start is called before the first frame update
     private List<string> listOfChars = new List<string>();
     private List<string> typingListOfChars = new List<string>();
     private List<int> wordCounts = new List<int>();
     private List<float> testTimes = new List<float>();
+    public string User;
 
 
     string redTag = "<color=" + "red" + ">";
@@ -39,8 +36,21 @@ public class CorrectLayer : MonoBehaviour
     private int correctCount = 0;
     private int totalCount = 0;
 
+    // String that will be the name of the file that will be written to
+    private string filePath;
+    TextWriter tw;
+    private int testCount = 4;
+
     void Start()
     {
+        //  set file name as the current date and time
+        filePath = "./" + System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") +"_User"+User + ".txt";
+
+        // print current working directory
+        // LiveDebugConsole.Instance.Log(System.IO.Directory.GetCurrentDirectory());
+
+        // create the file
+        tw = new StreamWriter(filePath);
         // LiveDebugConsole.Instance.Log("CorrectLayer Start");
         Instance = this;
         tags.Add(redTag);
@@ -68,35 +78,53 @@ public class CorrectLayer : MonoBehaviour
 
     private void reset()
     {
-        // LiveDebugConsole.Instance.Log("new test started");
-        listOfChars.Clear();
-        typingListOfChars.Clear();
-        started = false;
-        typedIndex = 0;
-        trueIndex = 0;
-        isDone = false;
-        wordCounts.Clear();
-        testTimes.Clear();
-
-        // correctCount = 0;
-        // totalCount = 0;
-
-        int randomIndex = Random.Range(0, 5);
-        text.text = stringStorage.GetString(randomIndex);
-
-        // get the amount of words in the string by splitting it by spaces
-        int wordCount = stringStorage.GetString(randomIndex).Split(' ').Length;
-        LiveDebugConsole.Instance.Log("wordCount: " + wordCount);
-        tmpWordCount = wordCount;
-
-        for (int i = 0; i < stringStorage.GetString(randomIndex).Length; i++)
+        if (testCount <= 0)
         {
-            listOfChars.Add(stringStorage.GetString(randomIndex).Substring(i, 1));
-        }
-        testLength = listOfChars.Count;
-        LiveDebugConsole.Instance.Log("testLength: " + testLength);
+            // LiveDebugConsole.Instance.Log("Test Done");
 
-        textTimer.resetTimer();
+            // save the file
+            tw.Close();
+
+        }
+        else
+        {
+            // tw.WriteLine("Test text: " + stringStorage.GetString(randomIndex) + "\n");
+
+            // LiveDebugConsole.Instance.Log("new test started");
+            listOfChars.Clear();
+            typingListOfChars.Clear();
+            started = false;
+            typedIndex = 0;
+            trueIndex = 0;
+            isDone = false;
+            wordCounts.Clear();
+            testTimes.Clear();
+
+            // correctCount = 0;
+            // totalCount = 0;
+
+            int randomIndex = Random.Range(0, 29);
+            text.text = stringStorage.GetString(randomIndex);
+
+            tw.WriteLine("Test text: " + stringStorage.GetString(randomIndex));
+
+            // get the amount of words in the string by splitting it by spaces
+            int wordCount = stringStorage.GetString(randomIndex).Split(' ').Length;
+            // LiveDebugConsole.Instance.Log("wordCount: " + wordCount);
+            tmpWordCount = wordCount;
+
+            tw.WriteLine("Word count: " + wordCount);
+
+            for (int i = 0; i < stringStorage.GetString(randomIndex).Length; i++)
+            {
+                listOfChars.Add(stringStorage.GetString(randomIndex).Substring(i, 1));
+            }
+            testLength = listOfChars.Count;
+            //LiveDebugConsole.Instance.Log("testLength: " + testLength);
+
+            textTimer.resetTimer();
+            testCount--;
+        }
     }
 
     public void AddChar(string c)
@@ -133,6 +161,23 @@ public class CorrectLayer : MonoBehaviour
             isDone = true;
 
             wordCounts.Add(tmpWordCount);
+
+            tw.WriteLine("Test time: " + textTimer.getTime());
+
+            float acc = 0.0f;
+            if (totalCount == 0)
+            {
+                acc = 0.0f;
+            }
+            else
+            {
+                acc = (correctCount / (float)totalCount * 100);
+            }
+            tw.WriteLine("Accuracy: " + acc);
+            tw.WriteLine("WPM: " + (tmpWordCount / textTimer.getTime() * 60));
+            tw.WriteLine("Correct count: " + correctCount);
+            tw.WriteLine("Total count: " + totalCount + "\n");
+
 
             testTimes.Add(textTimer.getTime());
             textTimer.stopTimer();
