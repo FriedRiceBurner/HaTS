@@ -251,7 +251,7 @@ public class GameManager : MonoBehaviour
 			float yhandSum = leftHand.transform.position.y + rightHand.transform.position.y;
 
 			virtualKeyboard.transform.position = fingerSum / 2
-			 										+ new Vector3(0, -(fingerSum.y - yhandSum), 0) / 1.7f;
+			 										+ new Vector3(0, -(fingerSum.y - yhandSum), 0) / 1.5f;
 
 			// Calculate the direction vector from target1 to target2
 			Vector3 direction = rightHand.transform.position - leftHand.transform.position;
