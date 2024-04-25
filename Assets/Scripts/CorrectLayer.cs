@@ -15,6 +15,7 @@ public class CorrectLayer : MonoBehaviour
     private List<string> typingListOfChars = new List<string>();
     private List<int> wordCounts = new List<int>();
     private List<float> testTimes = new List<float>();
+    public string User;
 
 
     string redTag = "<color=" + "red" + ">";
@@ -43,7 +44,7 @@ public class CorrectLayer : MonoBehaviour
     void Start()
     {
         //  set file name as the current date and time
-        filePath = "./" + System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".txt";
+        filePath = "./" + System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + "_User" + User + ".txt";
 
         // print current working directory
         // LiveDebugConsole.Instance.Log(System.IO.Directory.GetCurrentDirectory());
