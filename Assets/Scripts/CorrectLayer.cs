@@ -36,6 +36,9 @@ public class CorrectLayer : MonoBehaviour
     private int correctCount = 0;
     private int totalCount = 0;
 
+    private int testCorrectCount = 0;
+    private int testTotalCount = 0;
+
     // String that will be the name of the file that will be written to
     private string filePath;
     TextWriter tw;
@@ -99,6 +102,9 @@ public class CorrectLayer : MonoBehaviour
             isDone = false;
             wordCounts.Clear();
             testTimes.Clear();
+
+            testCorrectCount = 0;
+            testTotalCount = 0;
 
             // correctCount = 0;
             // totalCount = 0;
@@ -173,10 +179,23 @@ public class CorrectLayer : MonoBehaviour
             {
                 acc = (correctCount / (float)totalCount * 100);
             }
-            tw.WriteLine("Accuracy: " + acc);
+
+            float testAcc = 0.0f;
+            if (testTotalCount == 0)
+            {
+                testAcc = 0.0f;
+            }
+            else
+            {
+                testAcc = (testCorrectCount / (float)testTotalCount * 100);
+            }
+
+            tw.WriteLine("Total Accuracy: " + acc);
+            tw.WriteLine("Test Accuracy: " + testAcc);
             tw.WriteLine("WPM: " + (tmpWordCount / textTimer.getTime() * 60));
             tw.WriteLine("Correct count: " + correctCount);
             tw.WriteLine("Total count: " + totalCount + "\n");
+            tw.WriteLine("typingListOfChars: " + string.Join("", typingListOfChars.ToArray()));
 
 
             testTimes.Add(textTimer.getTime());
