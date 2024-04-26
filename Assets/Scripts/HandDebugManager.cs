@@ -5,14 +5,9 @@ using UnityEngine;
 
 public class HandDebugManager : MonoBehaviour
 {
-	[SerializeField] private TextMeshProUGUI HandDebugConsole;
-	[SerializeField] private OVRHand leftHand;
-	[SerializeField] private OVRHand rightHand;
-
-	[SerializeField] private OVRSkeleton leftSkel;
-	[SerializeField] private OVRSkeleton rightSkel;
-
 	public HaTS hatsHolder;
+
+	[HideInInspector] public bool isKeyPressActive = false;
 
 	// Start is called before the first frame update
 	void Start()

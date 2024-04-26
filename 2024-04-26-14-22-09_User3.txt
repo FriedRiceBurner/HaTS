@@ -1,0 +1,40 @@
+Test text: govern he own the would who home set mean a after way however since order work even go find
+Word count: 19
+Test time: 113.6757
+Total Accuracy: 15.38461
+Test Accuracy: 0
+WPM: 10.02853
+Correct count: 14
+Total count: 91
+
+typingListOfChars: EQFFHFET UEHRTTWE  WW VT W VQ EATOET MCAG  ] }AGTQFHTHTTHTHTISQTHISWVQFTFTRVVFVFTTTBIWWSEZSSS
+Test text: sometimes can few mean should public which high head going show since look nation come than
+Word count: 16
+Test time: 64.71336
+Total Accuracy: 10.98901
+Test Accuracy: 0
+WPM: 14.83465
+Correct count: 20
+Total count: 182
+
+typingListOfChars: THISQTHSQIS G ODFWWEWWWWWWWE REQQW  S FTIWWWWQQQQQQTHSEQQQQQQWWRWFTBJST JFJNVTBIS ESTSSWSSS
+Test text: govern he own the would who home set mean a after way however since order work even go find
+Word count: 19
+Test time: 199.2778
+Total Accuracy: 15.38461
+Test Accuracy: 0
+WPM: 5.720659
+Correct count: 42
+Total count: 273
+
+typingListOfChars: QSV ISTHISBHISRTTGTTTT ISTHIWVHISTHOWSVHIS T IS  JTHI       THOWWSC ODEEF WORK EVEN  O FIED
+Test text: some much no eye thing come down system however word then she head seem nation number just turn can again
+Word count: 20
+Test time: 79.64694
+Total Accuracy: 21.69312
+Test Accuracy: 0
+WPM: 15.06649
+Correct count: 82
+Total count: 378
+
+typingListOfChars: OSOMMMUHCEA O  N T ISQTHIEBFFSR; :AAWQTME HOWEVEC WIJD TGWN SHQ HEQD SEENQ ATJWONN ME C HUEV T EN AN W TTBI

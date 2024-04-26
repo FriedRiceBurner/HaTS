@@ -14,6 +14,8 @@ public class KeyScript : MonoBehaviour
 {
     [SerializeField] GameObject lefthand;
     [SerializeField] GameObject righthand;
+    [SerializeField] Material onPressMaterial;
+
     public string keyID;
 
     // reference to the text mesh pro object
@@ -108,6 +110,16 @@ public class KeyScript : MonoBehaviour
     }
     public void pressed()
     {
+        bool isactive = transform.parent.GetComponent<HandDebugManager>().isKeyPressActive;
+
+        if (isactive)
+        {
+            return;
+        }
+
+        transform.parent.GetComponent<HandDebugManager>().isKeyPressActive = true;
+        GetComponentInChildren<MeshRenderer>().material = onPressMaterial;
+
         hats = transform.parent.GetComponent<HandDebugManager>().hatsHolder;
         // Debug.Log("transform.parent.name");
         // Debug.Log(transform.parent.name);
@@ -141,6 +153,10 @@ public class KeyScript : MonoBehaviour
 
         // correctLayer.GetComponent<CorrectLayer>().AddChar(KeyText.text);
         CorrectLayer.Instance.AddChar(KeyText.text);
+    }
 
+    public void SetKeyPressActivity(bool CurrentState)
+    {
+        transform.parent.GetComponent<HandDebugManager>().isKeyPressActive = CurrentState;
     }
 }

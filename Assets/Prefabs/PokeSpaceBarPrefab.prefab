@@ -205,18 +205,6 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6305812907765022954}
-        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
-        m_MethodName: set_material
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: 35d4d241c96978348a568068e424fbeb, type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: -7535169381897287361}
         m_TargetAssemblyTypeName: KeyScript, Assembly-CSharp
         m_MethodName: pressed
@@ -239,6 +227,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 2100000, guid: b662d9d866720534582850ff5fb5fbf7, type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -7535169381897287361}
+        m_TargetAssemblyTypeName: KeyScript, Assembly-CSharp
+        m_MethodName: SetKeyPressActivity
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -270,6 +270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lefthand: {fileID: 0}
   righthand: {fileID: 0}
+  onPressMaterial: {fileID: 2100000, guid: 35d4d241c96978348a568068e424fbeb, type: 2}
   keyID: ' '
   KeyText: {fileID: 4123279674418218457}
   sound: {fileID: -8491612294395178243}
