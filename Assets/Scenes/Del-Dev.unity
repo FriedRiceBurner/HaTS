@@ -733,6 +733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lefthand: {fileID: 0}
   righthand: {fileID: 0}
+  onPressMaterial: {fileID: 0}
   keyID: 
   KeyText: {fileID: 529271696}
   sound: {fileID: 320343858}
@@ -1395,6 +1396,10 @@ PrefabInstance:
     - target: {fileID: 7948969400524233289, guid: b46a96720793ab04bb5162e9f89f7dcf, type: 3}
       propertyPath: m_Name
       value: Keyboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948969400524233289, guid: b46a96720793ab04bb5162e9f89f7dcf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8136619845834656854, guid: b46a96720793ab04bb5162e9f89f7dcf, type: 3}
       propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -3284,6 +3289,18 @@ PrefabInstance:
     - target: {fileID: 338338429302638428, guid: 47aa921f2426a404a84bb4aa2df64a0f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 376184197753690528, guid: 47aa921f2426a404a84bb4aa2df64a0f, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 1f997f2a31f8f2346a3b114f6892bbeb, type: 2}
+    - target: {fileID: 376184197753690528, guid: 47aa921f2426a404a84bb4aa2df64a0f, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1531439515520075248, guid: 1f997f2a31f8f2346a3b114f6892bbeb, type: 2}
+    - target: {fileID: 376184197753690528, guid: 47aa921f2426a404a84bb4aa2df64a0f, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1758552555991099293, guid: 47aa921f2426a404a84bb4aa2df64a0f, type: 3}
       propertyPath: m_LocalRotation.w
