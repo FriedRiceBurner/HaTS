@@ -22,6 +22,9 @@ public class CorrectLayer : MonoBehaviour
     string greyTag = "<color=" + "grey" + ">";
     string whiteTag = "<color=" + "white" + ">";
 
+    string underlineTag = "<u>";
+    string closeUnderlineTag = "</u>";
+
     List<string> tags = new List<string>();
 
     private bool started = false;
@@ -59,6 +62,8 @@ public class CorrectLayer : MonoBehaviour
         tags.Add(redTag);
         tags.Add(greyTag);
         tags.Add(whiteTag);
+        tags.Add(underlineTag);
+        tags.Add(closeUnderlineTag);
 
         reset();
     }
@@ -161,6 +166,27 @@ public class CorrectLayer : MonoBehaviour
 
         typedIndex++;
         trueIndex++;
+
+        // logic to wrap only the current character in a tag
+        if (isDone == false)
+        {
+            if (trueIndex < listOfChars.Count)
+            {
+                listOfChars.Insert(trueIndex, tags[3]);
+                listOfChars.Insert(trueIndex + 2, tags[4]);
+                trueIndex += 2;
+            }
+        }
+
+        for (int i = trueIndex; i < trueIndex; i++)
+        {
+            if (listOfChars[i] == tags[3] || listOfChars[i] == tags[4])
+            {
+                // remove it and subtract 1 from trueIndex
+                listOfChars.RemoveAt(i);
+                trueIndex--;
+            }
+        }
 
         if (typedIndex >= testLength)
         {
