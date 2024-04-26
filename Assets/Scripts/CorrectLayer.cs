@@ -155,7 +155,10 @@ public class CorrectLayer : MonoBehaviour
             // if char is space switch it to a _ for better visibility
             if (listOfChars[trueIndex] == " ")
             {
+                // remove the space
+                listOfChars.RemoveAt(trueIndex);
                 listOfChars.Insert(trueIndex, "_");
+
             }
             listOfChars.Insert(trueIndex, whiteTag);
             listOfChars.Insert(trueIndex + 2, greyTag);
@@ -167,6 +170,7 @@ public class CorrectLayer : MonoBehaviour
         {
             if (listOfChars[trueIndex] == " ")
             {
+                listOfChars.RemoveAt(trueIndex);
                 listOfChars.Insert(trueIndex, "_");
             }
             listOfChars.Insert(trueIndex, redTag);
