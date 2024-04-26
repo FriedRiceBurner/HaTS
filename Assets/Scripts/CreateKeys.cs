@@ -106,9 +106,4 @@ public class CreateKeys : MonoBehaviour
 		keysCreated = true;
 	}
 
-	// Update is called once per frame
-	void Update()
-	{
-
-	}
 }
