@@ -101,7 +101,7 @@ public class CorrectLayer : MonoBehaviour
             // LiveDebugConsole.Instance.Log("new test started");
             listOfChars.Clear();
             // add the mono space tag to the first character
-            listOfChars.Add("<mspace=2.75em>");
+            // listOfChars.Add("<mspace=2.75em>");
             typingListOfChars.Clear();
             started = false;
             typedIndex = 0;
