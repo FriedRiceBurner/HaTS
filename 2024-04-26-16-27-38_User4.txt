@@ -1,0 +1,44 @@
+Test text: much state under know more change at say same well think only and many for again the might
+Word count: 18
+Test time: 138.1911
+Total Accuracy: 55.55556
+Test Accuracy: 0
+WPM: 7.815263
+Correct count: 50
+Total count: 90
+
+typingListOfChars: IUCHLSYQEEYNDZDEKNOOW ODRE QHANBE FT SAHAAMDE W . >L  BINKKNNLY[ {QNSMANNY  OR  GAIN THW NIGHT
+typingListOfChars: IUCHLSYQEEYNDZDEKNOOW ODRE QHANBE FT SAHAAMDE W . >L  BINKKNNLY[ {QNSMANNY  OR  GAIN THW NIGHT
+Test text: think possible while look need such well day who life it other from both way and want open one
+Word count: 19
+Test time: 95.19724
+Total Accuracy: 64.67391
+Test Accuracy: 0
+WPM: 11.97514
+Correct count: 119
+Total count: 184
+
+typingListOfChars: TBINK POQEIBLE QUTHW KIPM NWW  AUCH WEL, < DAY WHO PIFE IR OTHWR FROM BOTH EZYM ND  ANT OPEN ONE
+typingListOfChars: TBINK POQEIBLE QUTHW KIPM NWW  AUCH WEL, < DAY WHO PIFE IR OTHWR FROM BOTH EZYM ND  ANT OPEN ONE
+Test text: help during than own first long point early through it must when help little it too long that face state
+Word count: 20
+Test time: 78.1011
+Total Accuracy: 70.13889
+Test Accuracy: 0
+WPM: 15.3647
+Correct count: 202
+Total count: 288
+
+typingListOfChars: HELP DURING THAN OQN FIRST LING POINT WEF; :Y YHROUGH IT LUW  QHEN HRKP LITT, <E OT TOO LOJG THATATACE AFQTE
+typingListOfChars: HELP DURING THAN OQN FIRST LING POINT WEF; :Y YHROUGH IT LUW  QHEN HRKP LITT, <E OT TOO LOJG THATATACE AFQTE
+Test text: few just increase sometimes you these leave order number good change to man follow also high over also through
+Word count: 19
+Test time: 93.88739
+Total Accuracy: 72.86432
+Test Accuracy: 0
+WPM: 12.14221
+Correct count: 290
+Total count: 398
+
+typingListOfChars: FEQ JUZS INCREASE AOMETIMWWS OU THQSE LEAVE OEDER, <NUMBRR GOIQ VHANGE TO MAN FOLLOW A, <SO HI H OVWR SLWO THEOU H
+typingListOfChars: FEQ JUZS INCREASE AOMETIMWWS OU THQSE LEAVE OEDER, <NUMBRR GOIQ VHANGE TO MAN FOLLOW A, <SO HI H OVWR SLWO THEOU H

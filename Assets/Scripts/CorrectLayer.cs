@@ -22,9 +22,6 @@ public class CorrectLayer : MonoBehaviour
     string greyTag = "<color=" + "grey" + ">";
     string whiteTag = "<color=" + "white" + ">";
 
-    string underlineTag = "<u>";
-    string closeUnderlineTag = "</u>";
-
     List<string> tags = new List<string>();
 
     private bool started = false;
@@ -62,8 +59,6 @@ public class CorrectLayer : MonoBehaviour
         tags.Add(redTag);
         tags.Add(greyTag);
         tags.Add(whiteTag);
-        tags.Add(underlineTag);
-        tags.Add(closeUnderlineTag);
 
         reset();
     }
@@ -100,12 +95,10 @@ public class CorrectLayer : MonoBehaviour
 
             // LiveDebugConsole.Instance.Log("new test started");
             listOfChars.Clear();
-            // add the mono space tag to the first character
-            // listOfChars.Add("<mspace=2.75em>");
             typingListOfChars.Clear();
             started = false;
             typedIndex = 0;
-            trueIndex = 1; // bc mono space tag is at index 0
+            trueIndex = 0;
             isDone = false;
             wordCounts.Clear();
             testTimes.Clear();
@@ -150,18 +143,8 @@ public class CorrectLayer : MonoBehaviour
 
         typingListOfChars.Add(c);
 
-
-
         if (typingListOfChars[typedIndex].ToLower() == listOfChars[trueIndex].ToLower())
         {
-            // if char is space switch it to a _ for better visibility
-            if (listOfChars[trueIndex] == " ")
-            {
-                // remove the space
-                listOfChars.RemoveAt(trueIndex);
-                listOfChars.Insert(trueIndex, "_");
-
-            }
             listOfChars.Insert(trueIndex, whiteTag);
             listOfChars.Insert(trueIndex + 2, greyTag);
             trueIndex += 2;
@@ -170,11 +153,6 @@ public class CorrectLayer : MonoBehaviour
         }
         else
         {
-            if (listOfChars[trueIndex] == " ")
-            {
-                listOfChars.RemoveAt(trueIndex);
-                listOfChars.Insert(trueIndex, "_");
-            }
             listOfChars.Insert(trueIndex, redTag);
             listOfChars.Insert(trueIndex + 2, greyTag);
             trueIndex += 2;
@@ -183,27 +161,6 @@ public class CorrectLayer : MonoBehaviour
 
         typedIndex++;
         trueIndex++;
-
-        // logic to wrap only the current character in a tag
-        // if (isDone == false)
-        // {
-        //     if (trueIndex < listOfChars.Count)
-        //     {
-        //         listOfChars.Insert(trueIndex, tags[3]);
-        //         listOfChars.Insert(trueIndex + 2, tags[4]);
-        //         trueIndex += 2;
-        //     }
-        // }
-
-        // for (int i = trueIndex; i < trueIndex; i++)
-        // {
-        //     if (listOfChars[i] == tags[3] || listOfChars[i] == tags[4])
-        //     {
-        //         // remove it and subtract 1 from trueIndex
-        //         listOfChars.RemoveAt(i);
-        //         trueIndex--;
-        //     }
-        // }
 
         if (typedIndex >= testLength)
         {
@@ -238,6 +195,7 @@ public class CorrectLayer : MonoBehaviour
             tw.WriteLine("WPM: " + (tmpWordCount / textTimer.getTime() * 60));
             tw.WriteLine("Correct count: " + correctCount);
             tw.WriteLine("Total count: " + totalCount + "\n");
+            tw.WriteLine("typingListOfChars: " + string.Join("", typingListOfChars.ToArray()));
             tw.WriteLine("typingListOfChars: " + string.Join("", typingListOfChars.ToArray()));
 
 
