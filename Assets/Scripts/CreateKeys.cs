@@ -86,7 +86,16 @@ public class CreateKeys : MonoBehaviour
 
 		GameObject spacebarkey = Instantiate(SpacebarPrefab);
 		spacebarkey.transform.parent = transform;
-		spacebarkey.transform.localPosition = centerMarker + keyDistanceY;
+		if (KeyboardType == 0)
+		{
+			spacebarkey.transform.localPosition = centerMarker + keyDistanceY * 2;
+		}
+		else
+		{
+			spacebarkey.transform.localPosition = centerMarker + keyDistanceY;
+
+		}
+
 		spacebarkey.transform.localScale = KeyScales[KeyboardType];
 		previousPosition = new Vector3(centerMarker.x, spacebarkey.transform.localPosition.y, spacebarkey.transform.localPosition.z);
 		spacebarkey.GetComponent<KeyScript>().keyID = " ";

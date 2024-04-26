@@ -93,10 +93,13 @@ public class KeyScript : MonoBehaviour
             case string s when s.Contains("thumb"):
                 if (hand.Contains("left"))
                 {
+                    Debug.Log("left hand");
                     StartCoroutine(hats.GetComponent<HaTS>().Buzz(hats.leftThumb));
                 }
                 else
                 {
+                    Debug.Log("right hand");
+
                     StartCoroutine(hats.GetComponent<HaTS>().Buzz(hats.rightThumb));
                 }
 
@@ -115,7 +118,13 @@ public class KeyScript : MonoBehaviour
 
         //get the object that interacted with the key 
         poker = GetComponent<PokeInteractable>().Interactors.First();
-        if (poker.transform.parent.parent.parent.parent.parent.parent.parent.name.ToLower().Contains("left"))
+        // Debug.Log(poker.transform.parent.parent.parent.parent.parent.parent.name.ToLower());
+        // Debug.Log(poker.transform.parent.parent.parent.parent.parent.parent.parent.name.ToLower());
+        // Debug.Log(poker.transform.parent.parent.parent.parent.parent.parent.parent.parent.name.ToLower());
+
+        if (poker.transform.parent.parent.parent.parent.parent.parent.name.ToLower().Contains("left") ||
+            poker.transform.parent.parent.parent.parent.parent.parent.parent.name.ToLower().Contains("left") ||
+            poker.transform.parent.parent.parent.parent.parent.parent.parent.parent.name.ToLower().Contains("left"))
         {
             CheckFinger(poker.transform.parent.name.ToLower(), "left");
             // Debug.Log("left hand");
