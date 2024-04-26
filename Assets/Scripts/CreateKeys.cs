@@ -29,6 +29,7 @@ public class CreateKeys : MonoBehaviour
 	private Vector3 keyDistanceX = new Vector3(0.01905f, 0, 0);
 	private Vector3 keyDistanceY = new Vector3(0, 0, -0.01905f);
 	private Vector3 shiftedRow = new Vector3(0.0079375f, 0, 0);
+	private Vector3 rowHeightStagger = new Vector3(0, -0.002f, 0);
 
 	// virtual vs physical keyboard overlay
 	private Vector3[] KeyScales = {
@@ -40,7 +41,8 @@ public class CreateKeys : MonoBehaviour
 	public void PlaceKeys(int KeyboardType, Vector3 keyDistanceX, Vector3 keyDistanceY, Vector3 shiftedRow)
 	{
 		//if (keysCreated) return;
-		previousPosition = -keyDistanceX * 5 - (keyDistanceX / 3) - shiftedRow - keyDistanceY;
+		// row stagger is negative so add first row should be higher .002f
+		previousPosition = -keyDistanceX * 5 - (keyDistanceX / 3) - shiftedRow - keyDistanceY - rowHeightStagger;
 		//previousPosition = new Vector3(0, 0, 0);
 
 		foreach (string key in topRow)
@@ -68,7 +70,7 @@ public class CreateKeys : MonoBehaviour
 			newKey.name = key + "-key";
 		}
 
-		previousPosition = -keyDistanceX * 5 - (keyDistanceX / 3) - shiftedRow - keyDistanceY + shiftedRow * 2.5f + keyDistanceY * 2;
+		previousPosition = -keyDistanceX * 5 - (keyDistanceX / 3) - shiftedRow - keyDistanceY + shiftedRow * 2.5f + keyDistanceY * 2 + rowHeightStagger;
 
 		foreach (string key in bottomRow)
 		{
@@ -97,7 +99,7 @@ public class CreateKeys : MonoBehaviour
 		}
 
 		spacebarkey.transform.localScale = KeyScales[KeyboardType];
-		previousPosition = new Vector3(centerMarker.x, spacebarkey.transform.localPosition.y, spacebarkey.transform.localPosition.z);
+		previousPosition = new Vector3(centerMarker.x, spacebarkey.transform.localPosition.y, spacebarkey.transform.localPosition.z) + rowHeightStagger * 2;
 		spacebarkey.GetComponent<KeyScript>().keyID = " ";
 		spacebarkey.name = "Spacebar";
 
