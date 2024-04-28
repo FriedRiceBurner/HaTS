@@ -1,0 +1,44 @@
+Test text: few just increase sometimes you these leave order number good change to man follow also high over also through
+Word count: 19
+Test time: 87.09468
+Total Accuracy: 71.81818
+Test Accuracy: 0
+WPM: 13.0892
+Correct count: 79
+Total count: 110
+
+typingListOfChars:  EWH JUDSTNCRREADE OMRTIMRD YOU THESE , <ESVE ORDER NUMBXR GOODE GANGE TO MAN TOLLOE ALOO HUGH OVRR  LDOTTHROUGH
+typingListOfChars:  EWH JUDSTNCRREADE OMRTIMRD YOU THESE , <ESVE ORDER NUMBXR GOODE GANGE TO MAN TOLLOE ALOO HUGH OVRR  LDOTTHROUGH
+Test text: from how many write between many home to problem be than public what under on place day late who work number
+Word count: 21
+Test time: 72.36691
+Total Accuracy: 70.18349
+Test Accuracy: 0
+WPM: 17.41127
+Correct count: 153
+Total count: 218
+
+typingListOfChars: FROM GHW MWNY WRITE BETWEEN MANY  UOME TO ROBKENI E THSN LUBKIC WHSR UNDRR ON PLAXE DS T LSTR  W WORK NUMBER
+typingListOfChars: FROM GHW MWNY WRITE BETWEEN MANY  UOME TO ROBKENI E THSN LUBKIC WHSR UNDRR ON PLAXE DS T LSTR  W WORK NUMBER
+Test text: off move head write few end large of right those many end many need other now plan get may year
+Word count: 20
+Test time: 65.67334
+Total Accuracy: 68.37061
+Test Accuracy: 0
+WPM: 18.27225
+Correct count: 214
+Total count: 313
+
+typingListOfChars: OFF MOVE HEADWRRITE REWAEJF LARE E  RIIGHT TGOXWE MANT ED MATYB HEEDOTGER NOW PLANNGRR MAY YEAR
+typingListOfChars: OFF MOVE HEADWRRITE REWAEJF LARE E  RIIGHT TGOXWE MANT ED MATYB HEEDOTGER NOW PLANNGRR MAY YEAR
+Test text: both day people public same help have only all show down make it large between nation off year
+Word count: 18
+Test time: 53.37927
+Total Accuracy: 70.76167
+Test Accuracy: 0
+WPM: 20.23257
+Correct count: 288
+Total count: 407
+
+typingListOfChars: HOTH DSY PEOPPEEX BLIC SAMR HELP HAVR ONLY AKL SOWWW OWN MAKE IT LZTEE BETWEEN NATIONNORR YESR
+typingListOfChars: HOTH DSY PEOPPEEX BLIC SAMR HELP HAVR ONLY AKL SOWWW OWN MAKE IT LZTEE BETWEEN NATIONNORR YESR

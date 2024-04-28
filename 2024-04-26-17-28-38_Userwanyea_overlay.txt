@@ -1,0 +1,44 @@
+Test text: number people high find who from world then little might begin how it by however good not or
+Word count: 18
+Test time: 84.60773
+Total Accuracy: 60.86956
+Test Accuracy: 0
+WPM: 12.76479
+Correct count: 56
+Total count: 92
+
+typingListOfChars: O[ {[ {ISKM PEOPLE IGH FI DEHO RORO  EOERL THENHLITTLE KIGHT  BRGN HOW IT BY UOWV ER GOOD NOT OR
+typingListOfChars: O[ {[ {ISKM PEOPLE IGH FI DEHO RORO  EOERL THENHLITTLE KIGHT  BRGN HOW IT BY UOWV ER GOOD NOT OR
+Test text: help during than own first long point early through it must when help little it too long that face state
+Word count: 20
+Test time: 75.15187
+Total Accuracy: 69.38776
+Test Accuracy: 0
+WPM: 15.96767
+Correct count: 136
+Total count: 196
+
+typingListOfChars: HRLP EURGNG TAHN EEW FIRST LI G POI T EARLY GRHUUGH IT MUET WHRN HELP LITTLE IT TOO LONG HSAT  AAC STAAA
+typingListOfChars: HRLP EURGNG TAHN EEW FIRST LI G POI T EARLY GRHUUGH IT MUET WHRN HELP LITTLE IT TOO LONG HSAT  AAC STAAA
+Test text: few just increase sometimes you these leave order number good change to man follow also high over also through
+Word count: 19
+Test time: 84.10425
+Total Accuracy: 63.72549
+Test Accuracy: 0
+WPM: 13.55461
+Correct count: 195
+Total count: 306
+
+typingListOfChars: DEW KHUSINADRDZASEEVMEIIE EX YOTEREDE LEOOE  RDER KUMBER TOOD CUAHGE TO KAN  RO, <LOE  SO HIHH OVRR QASP TTROUGH
+typingListOfChars: DEW KHUSINADRDZASEEVMEIIE EX YOTEREDE LEOOE  RDER KUMBER TOOD CUAHGE TO KAN  RO, <LOE  SO HIHH OVRR QASP TTROUGH
+Test text: number people high find who from world then little might begin how it by however good not or
+Word count: 18
+Test time: 61.49652
+Total Accuracy: 62.0603
+Test Accuracy: 0
+WPM: 17.56197
+Correct count: 247
+Total count: 398
+
+typingListOfChars: JU BRR POOPOPWEIGH RIND  HPORRMM ORODD RTURN ITLEE KIGGT GRGINYOOE IT YY GOEEVER TOOD NO RRR
+typingListOfChars: JU BRR POOPOPWEIGH RIND  HPORRMM ORODD RTURN ITLEE KIGGT GRGINYOOE IT YY GOEEVER TOOD NO RRR

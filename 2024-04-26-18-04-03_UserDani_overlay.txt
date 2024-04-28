@@ -1,0 +1,44 @@
+Test text: and than very however way child or other where again want will what hand then she know by
+Word count: 18
+Test time: 129.579
+Total Accuracy: 70.78651
+Test Accuracy: 0
+WPM: 8.334685
+Correct count: 63
+Total count: 89
+
+typingListOfChars: JKKO; :HALAFERY HOWERER/ ? QA FHILE OR OTGER SHHREAA[ {AIN WAARTWILL WHAT HAND THEB SHE KBOW GY
+typingListOfChars: JKKO; :HALAFERY HOWERER/ ? QA FHILE OR OTGER SHHREAA[ {AIN WAARTWILL WHAT HAND THEB SHE KBOW GY
+Test text: think possible while look need such well day who life it other from both way and want open one
+Word count: 19
+Test time: 107.8142
+Total Accuracy: 67.21311
+Test Accuracy: 0
+WPM: 10.57375
+Correct count: 123
+Total count: 183
+
+typingListOfChars:  HINIK OWSIBHJ WHILE LOOK NNEDNWSU] }E SWLL AY WYPO IFE ITLITYERFFROM GOTH WAY ANND WNTT PEN ONE
+typingListOfChars:  HINIK OWSIBHJ WHILE LOOK NNEDNWSU] }E SWLL AY WYPO IFE ITLITYERFFROM GOTH WAY ANND WNTT PEN ONE
+Test text: govern he own the would who home set mean a after way however since order work even go find
+Word count: 19
+Test time: 123.351
+Total Accuracy: 61.67883
+Test Accuracy: 0
+WPM: 9.241916
+Correct count: 169
+Total count: 274
+
+typingListOfChars: GOGG] }R HE  WN TUE WOYULS YOH IMESEYT JEENJA AFTER WA  Y WER RSSIICEBIIIE R WORK VEJ  O RFID
+typingListOfChars: GOGG] }R HE  WN TUE WOYULS YOH IMESEYT JEENJA AFTER WA  Y WER RSSIICEBIIIE R WORK VEJ  O RFID
+Test text: may change old govern last back very then like something then be play how ask time possible eye when way early a
+Word count: 22
+Test time: 141.8833
+Total Accuracy: 60.36269
+Test Accuracy: 0
+WPM: 9.303422
+Correct count: 233
+Total count: 386
+
+typingListOfChars: MAY  DCCGEE LD  GOERJJ  STHBAAAFGERY  TEJ ; :LIKENOOETHIBB THEN BE OLUYHOWW ASS TIKENPOSSIIHLENY  WHEN WAY EWALLAA
+typingListOfChars: MAY  DCCGEE LD  GOERJJ  STHBAAAFGERY  TEJ ; :LIKENOOETHIBB THEN BE OLUYHOWW ASS TIKENPOSSIIHLENY  WHEN WAY EWALLAA

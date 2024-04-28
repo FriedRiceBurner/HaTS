@@ -1,0 +1,44 @@
+Test text: much state under know more change at say same well think only and many for again the might
+Word count: 18
+Test time: 65.9485
+Total Accuracy: 50
+Test Accuracy: 0
+WPM: 16.37642
+Correct count: 45
+Total count: 90
+
+typingListOfChars: WJ  SRTATE U DEF K OW MORE C  JBE AFR SZY ZAKMXELL THI K . >N. >H[ { JD MANY  RR  BSIN RE MI NGT
+typingListOfChars: WJ  SRTATE U DEF K OW MORE C  JBE AFR SZY ZAKMXELL THI K . >N. >H[ { JD MANY  RR  BSIN RE MI NGT
+Test text: consider they so we at must then head there public will during much late place way against
+Word count: 17
+Test time: 62.09297
+Total Accuracy: 57.22222
+Test Accuracy: 0
+WPM: 16.42698
+Correct count: 103
+Total count: 180
+
+typingListOfChars: DOID DER T EY SO EE ATQ, <IST  HEE  EAS THERC PUVKIC WILO DURGNG KUCH ; :ABD. >; :. >XVW SAN ZGA, <NST
+typingListOfChars: DOID DER T EY SO EE ATQ, <IST  HEE  EAS THERC PUVKIC WILO DURGNG KUCH ; :ABD. >; :. >XVW SAN ZGA, <NST
+Test text: they even time hold more never no such between around feel in the child than give each of a only
+Word count: 20
+Test time: 69.83499
+Total Accuracy: 59.42029
+Test Accuracy: 0
+WPM: 17.18336
+Correct count: 164
+Total count: 276
+
+typingListOfChars: T XY SEEN TNEE  OXD MOEX NXBSXCNO MYCH HZTZEXN ACOUND   EL IN CYE CHILC VHAN GI R XACH K AS ONLY
+typingListOfChars: T XY SEEN TNEE  OXD MOEX NXBSXCNO MYCH HZTZEXN ACOUND   EL IN CYE CHILC VHAN GI R XACH K AS ONLY
+Test text: from how many write between many home to problem be than public what under on place day late who work number
+Word count: 21
+Test time: 70.28026
+Total Accuracy: 57.29167
+Test Accuracy: 0
+WPM: 17.92822
+Correct count: 220
+Total count: 384
+
+typingListOfChars: ROM HOZE MANN SR, <TX  XWXEEN MANH  OJXTTO / ?R. >EOEM  E  HA  PUBLCC ZZQN U EDEOOM POS D DZY OATD EHO ZCJK NUMBSX
+typingListOfChars: ROM HOZE MANN SR, <TX  XWXEEN MANH  OJXTTO / ?R. >EOEM  E  HA  PUBLCC ZZQN U EDEOOM POS D DZY OATD EHO ZCJK NUMBSX

@@ -1,0 +1,44 @@
+Test text: long where person or that too get out work another time through may too end something sometimes by mountain
+Word count: 19
+Test time: 211.2979
+Total Accuracy: 57.00935
+Test Accuracy: 0
+WPM: 5.395227
+Correct count: 61
+Total count: 107
+
+typingListOfChars:  ONG  HCREPEERX N LORTHAT N, <, < GET  , <T XO K ANOVH A T ME  HOO. > / ?MMQM TOO WND  SOMWE NG XOMCEXMCW BY MO. >NDAIP
+typingListOfChars:  ONG  HCREPEERX N LORTHAT N, <, < GET  , <T XO K ANOVH A T ME  HOO. > / ?MMQM TOO WND  SOMWE NG XOMCEXMCW BY MO. >NDAIP
+Test text: at for late way real face see own also change work follow this stand turn give way all to be consider
+Word count: 21
+Test time: 175.0451
+Total Accuracy: 48.55769
+Test Accuracy: 0
+WPM: 7.198146
+Correct count: 101
+Total count: 208
+
+typingListOfChars: AT ROWR LLAAAWE RRAAA AXCXAS E WNCQPWED CHANGE WORRKOLLOW THEW STAND BURN FG  WWAY ALLL   [ {HXX. >. >SIDDZ
+typingListOfChars: AT ROWR LLAAAWE RRAAA AXCXAS E WNCQPWED CHANGE WORRKOLLOW THEW STAND BURN FG  WWAY ALLL   [ {HXX. >. >SIDDZ
+Test text: at for late way real face see own also change work follow this stand turn give way all to be consider
+Word count: 21
+Test time: 186.9349
+Total Accuracy: 53.39806
+Test Accuracy: 0
+WPM: 6.740313
+Correct count: 165
+Total count: 309
+
+typingListOfChars: QA FOR LATE WAN  EAO FACWEE E OZZ AAAO CHAN E WORK FRKLOW TS   STQ] }Z GP NN I E QQY A L T BBE  OON DER
+typingListOfChars: QA FOR LATE WAN  EAO FACWEE E OZZ AAAO CHAN E WORK FRKLOW TS   STQ] }Z GP NN I E QQY A L T BBE  OON DER
+Test text: public about do with know something stand small use down many head hand what would some call
+Word count: 17
+Test time: 140.3925
+Total Accuracy: 53.36658
+Test Accuracy: 0
+WPM: 7.265345
+Correct count: 214
+Total count: 401
+
+typingListOfChars: PUBLIC ABOU DDO WITH KNOW . > OMWEINGW WANNNS, <MKL IU/ ?SQOON MQNY HWZ/ ?HHANDDQHQRYZLO; :XSDIMMELALL
+typingListOfChars: PUBLIC ABOU DDO WITH KNOW . > OMWEINGW WANNNS, <MKL IU/ ?SQOON MQNY HWZ/ ?HHANDDQHQRYZLO; :XSDIMMELALL

@@ -1,0 +1,44 @@
+Test text: may change old govern last back very then like something then be play how ask time possible eye when way early a
+Word count: 22
+Test time: 103.6071
+Total Accuracy: 87.5
+Test Accuracy: 0
+WPM: 12.74043
+Correct count: 98
+Total count: 112
+
+typingListOfChars: MAY CHANGE , <OD YOVERN KAST AB K GWRY THEN LIKE SOMETHING THEN BE PLAY HOW ASK TTME PODSIBLE EYE EWEN WAY QARLY A
+typingListOfChars: MAY CHANGE , <OD YOVERN KAST AB K GWRY THEN LIKE SOMETHING THEN BE PLAY HOW ASK TTME PODSIBLE EYE EWEN WAY QARLY A
+Test text: play plan be now around own line before need home year call and he show begin such because
+Word count: 18
+Test time: 71.19896
+Total Accuracy: 89.10891
+Test Accuracy: 0
+WPM: 15.16876
+Correct count: 180
+Total count: 202
+
+typingListOfChars: PLQY PLAN HE NOW AROUNR OWN LINE BEFORE   ED HOME YEAR CQLL AND HE SSOW BEGIN SUFH BECAUSE
+typingListOfChars: PLQY PLAN HE NOW AROUNR OWN LINE BEFORE   ED HOME YEAR CQLL AND HE SSOW BEGIN SUFH BECAUSE
+Test text: few just increase sometimes you these leave order number good change to man follow also high over also through
+Word count: 19
+Test time: 68.93007
+Total Accuracy: 88.46154
+Test Accuracy: 0
+WPM: 16.5385
+Correct count: 276
+Total count: 312
+
+typingListOfChars: FEW JUSY KNCREASE SOMEYIMES YOU THESE LEAVE ORDER JUMBER GHOE CHANGE TO JAN FOLLOW AOSO HITGH  ER ALSONTHROUGH
+typingListOfChars: FEW JUSY KNCREASE SOMEYIMES YOU THESE LEAVE ORDER JUMBER GHOE CHANGE TO JAN FOLLOW AOSO HITGH  ER ALSONTHROUGH
+Test text: help a you own place order around you home each where when way over here use new time change
+Word count: 19
+Test time: 60.71509
+Total Accuracy: 88.61386
+Test Accuracy: 0
+WPM: 18.77622
+Correct count: 358
+Total count: 404
+
+typingListOfChars: HELP AJYOU OWN PLACE PRDERVATOYND YOU HOME EAFH WHERE WHENN AY OVER HERE UDE NEW TKME CHANGE
+typingListOfChars: HELP AJYOU OWN PLACE PRDERVATOYND YOU HOME EAFH WHERE WHENN AY OVER HERE UDE NEW TKME CHANGE
