@@ -305,10 +305,10 @@ public class GameManager : MonoBehaviour
 			//Vector3 direction = rightHand.transform.position - leftHand.transform.position;
 
 			// Calculate the rotation angle based on the direction vector
-			float HorizontalAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+			//float HorizontalAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 			float TiltedAngle = Mathf.Atan2(direction.z, direction.x) * Mathf.Rad2Deg;
 			// Set the rotation of the object based on the calculated angle
-			physicalKeyboard.transform.rotation = Quaternion.Euler(0, -TiltedAngle, HorizontalAngle);
+			physicalKeyboard.transform.rotation = Quaternion.Euler(0, -TiltedAngle, 0);
 			//virtualKeyboard.transform.SetPositionAndRotation();
 
 

@@ -1,0 +1,44 @@
+Test text: few just increase sometimes you these leave order number good change to man follow also high over also through
+Word count: 19
+Test time: 196.7281
+Total Accuracy: 47.27273
+Test Accuracy: 0
+WPM: 5.794799
+Correct count: 52
+Total count: 110
+
+typingListOfChars: AS. >W  JT IN RWQSE SOME[ {SISEA LO THESE LRAVW; :ORDEWR, <UMBER GKOOX CHQFQ TIMMAN   ' "P, <Q AKSO  I G; :KOOR. >ALDL' "T[ {RO Z 
+typingListOfChars: AS. >W  JT IN RWQSE SOME[ {SISEA LO THESE LRAVW; :ORDEWR, <UMBER GKOOX CHQFQ TIMMAN   ' "P, <Q AKSO  I G; :KOOR. >ALDL' "T[ {RO Z 
+Test text: great very make mean old if at take no number get on face late few consider year against small world
+Word count: 20
+Test time: 125.3602
+Total Accuracy: 55.71429
+Test Accuracy: 0
+WPM: 9.572416
+Correct count: 117
+Total count: 210
+
+typingListOfChars: RREZT; :QER  MSWAMEEWA  OS; :IR AT T ZAE NI; :OMBER  ETMON CACE LATE CES CONSIDER YEAR ZQAINZT SMALL WOFLD
+typingListOfChars: RREZT; :QER  MSWAMEEWA  OS; :IR AT T ZAE NI; :OMBER  ETMON CACE LATE CES CONSIDER YEAR ZQAINZT SMALL WOFLD
+Test text: in form just few world like state with well where with go sometimes she eye time say want leave
+Word count: 19
+Test time: 86.24042
+Total Accuracy: 65.2459
+Test Accuracy: 0
+WPM: 13.21886
+Correct count: 199
+Total count: 305
+
+typingListOfChars: IM FORM JUST FEW QOR, <D LIKE STZTE WIQH XELL WHERE WITH QO SOMETIMES SSE EYE TIME ZA YWANT LQAQE
+typingListOfChars: IM FORM JUST FEW QOR, <D LIKE STZTE WIQH XELL WHERE WITH QO SOMETIMES SSE EYE TIME ZA YWANT LQAQE
+Test text: think possible while look need such well day who life it other from both way and want open one
+Word count: 19
+Test time: 80.22577
+Total Accuracy: 71.92982
+Test Accuracy: 0
+WPM: 14.2099
+Correct count: 287
+Total count: 399
+
+typingListOfChars: TU[ {[ {K POSSIBLE WHILE LOOK NEED SUCH WELL DAY WHO LIFE IT OGHEF FROM BOTH WWY AND WANT OPEN ONE
+typingListOfChars: TU[ {[ {K POSSIBLE WHILE LOOK NEED SUCH WELL DAY WHO LIFE IT OGHEF FROM BOTH WWY AND WANT OPEN ONE

@@ -1,0 +1,32 @@
+Test text: move say run however too change he move come problem get turn if up when same out keep out
+Word count: 19
+Test time: 71.55021
+Accuracy: 72.22222
+WPM: 15.93287
+Correct count: 65
+Total count: 90
+
+Test text: help during than own first long point early through it must when help little it too long that face state
+Word count: 20
+Test time: 73.55113
+Accuracy: 72.16495
+WPM: 16.31518
+Correct count: 140
+Total count: 194
+
+Test text: and than very however way child or other where again want will what hand then she know by
+Word count: 18
+Test time: 52.73927
+Accuracy: 69.96466
+WPM: 20.4781
+Correct count: 198
+Total count: 283
+
+Test text: mean those little world new children set not new never than know have change leave and who call
+Word count: 18
+Test time: 69.37436
+Accuracy: 69.31217
+WPM: 15.56771
+Correct count: 262
+Total count: 378
+

@@ -1,0 +1,44 @@
+Test text: much state under know more change at say same well think only and many for again the might
+Word count: 18
+Test time: 143.5563
+Total Accuracy: 17.77778
+Test Accuracy: 0
+WPM: 7.523181
+Correct count: 16
+Total count: 90
+
+typingListOfChars: S XDQ   DDRAVJA, <  X MK  XRZ DA W Q A ZZG ZA  M; :ZX, <. >  , < K/ ?  . >H ANX MA, <H WWGC AAI  D DSP, <MIC
+typingListOfChars: S XDQ   DDRAVJA, <  X MK  XRZ DA W Q A ZZG ZA  M; :ZX, <. >  , < K/ ?  . >H ANX MA, <H WWGC AAI  D DSP, <MIC
+Test text: sometimes can few mean should public which high head going show since look nation come than
+Word count: 16
+Test time: 148.0304
+Total Accuracy: 20.44199
+Test Accuracy: 0
+WPM: 6.485155
+Correct count: 37
+Total count: 181
+
+typingListOfChars: S] }; :, <XT KS CZN CCXW MSJQ SLOM. >P [ { ] }, <Z ' "' ". >' "QQ MTG BWA[ {XDMOIG XHKO SINJZ , <LOOPMZD[ {] }N  COM CNH 
+typingListOfChars: S] }; :, <XT KS CZN CCXW MSJQ SLOM. >P [ { ] }, <Z ' "' ". >' "QQ MTG BWA[ {XDMOIG XHKO SINJZ , <LOOPMZD[ {] }N  COM CNH 
+Test text: long where person or that too get out work another time through may too end something sometimes by mountain
+Word count: 19
+Test time: 202.3568
+Total Accuracy: 31.94444
+Test Accuracy: 0
+WPM: 5.633612
+Correct count: 92
+Total count: 288
+
+typingListOfChars: ML[ {[ {KSS XFN; :] }DE] }] }N. >] }LQISVETIO [ {] }S' "' "UDF WRK , <NLTHERP IKE THRIUHH NAY TOO EMD SOMETHIJG SOKETIMES BBLNOUNNAI[ {
+typingListOfChars: ML[ {[ {KSS XFN; :] }DE] }] }N. >] }LQISVETIO [ {] }S' "' "UDF WRK , <NLTHERP IKE THRIUHH NAY TOO EMD SOMETHIJG SOKETIMES BBLNOUNNAI[ {
+Test text: govern he own the would who home set mean a after way however since order work even go find
+Word count: 19
+Test time: 85.27859
+Total Accuracy: 27.96834
+Test Accuracy: 0
+WPM: 13.36795
+Correct count: 106
+Total count: 379
+
+typingListOfChars: [ {QGWDHHWWSW[ {NQQWSSEW, <LOKZKVFREHSEDDVYSEDFDSNDSSWEEWWSQQOWWWER AJICCWODEQWEQDIS S  N CTO QER
+typingListOfChars: [ {QGWDHHWWSW[ {NQQWSSEW, <LOKZKVFREHSEDDVYSEDFDSNDSSWEEWWSQQOWWWER AJICCWODEQWEQDIS S  N CTO QER

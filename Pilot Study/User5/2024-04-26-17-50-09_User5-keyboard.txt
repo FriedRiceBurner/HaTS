@@ -1,0 +1,44 @@
+Test text: both day people public same help have only all show down make it large between nation off year
+Word count: 18
+Test time: 133.7162
+Total Accuracy: 59.57447
+Test Accuracy: 0
+WPM: 8.076807
+Correct count: 56
+Total count: 94
+
+typingListOfChars: FQWOODAY QEOPLEN UBPPW SQME HEPLM NVEN   F   QQ , < W DOWNJ; :; :KE IT LARGE HWTEEEJ HATIOJ OFF YEAR
+typingListOfChars: FQWOODAY QEOPLEN UBPPW SQME HEPLM NVEN   F   QQ , < W DOWNJ; :; :KE IT LARGE HWTEEEJ HATIOJ OFF YEAR
+Test text: and than very however way child or other where again want will what hand then she know by
+Word count: 18
+Test time: 108.536
+Total Accuracy: 67.75956
+Test Accuracy: 0
+WPM: 9.950619
+Correct count: 124
+Total count: 183
+
+typingListOfChars: AJD QTUN  WRY QOWEVER . >AQ, <CUILD  R OTHER QYERE AGAI] }Q AJN WILL WHAT HAND THEN SHE KJOW  Y
+typingListOfChars: AJD QTUN  WRY QOWEVER . >AQ, <CUILD  R OTHER QYERE AGAI] }Q AJN WILL WHAT HAND THEN SHE KJOW  Y
+Test text: help during than own first long point early through it must when help little it too long that face state
+Word count: 20
+Test time: 120.0936
+Total Accuracy: 71.08014
+Test Accuracy: 0
+WPM: 9.992208
+Correct count: 204
+Total count: 287
+
+typingListOfChars: YELP DURING TUZ ] }OWN T RST QONG POINT ] }ARLY TYRRUGY IT  UWT WYEJ' "GELP L IRLE IT TOO LOJT TUAT FACE STATE
+typingListOfChars: YELP DURING TUZ ] }OWN T RST QONG POINT ] }ARLY TYRRUGY IT  UWT WYEJ' "GELP L IRLE IT TOO LOJT TUAT FACE STATE
+Test text: mean those little world new children set not new never than know have change leave and who call
+Word count: 18
+Test time: 110.4432
+Total Accuracy: 71.20419
+Test Accuracy: 0
+WPM: 9.778782
+Correct count: 272
+Total count: 382
+
+typingListOfChars: MEW] }  THOSR ITTLE WORLD NEW DUILDQEN SET J T QEW JWEER TUAN KJ W UAVE CHAJGE LEAVE AAD WUKOCALL
+typingListOfChars: MEW] }  THOSR ITTLE WORLD NEW DUILDQEN SET J T QEW JWEER TUAN KJ W UAVE CHAJGE LEAVE AAD WUKOCALL

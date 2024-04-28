@@ -1,0 +1,23 @@
+Test text: great very make mean old if at take no number get on face late few consider year against small world
+Word count: 20
+Test time: 147.1359
+Total Accuracy: 20
+Test Accuracy: 0
+WPM: 8.155724
+Correct count: 20
+Total count: 100
+
+typingListOfChars: QIAW[ {A WIOI[ {QKE LQWQ OL[ {P I QT TAOE  N NYR] }WJQEI] }RQI] }UZWQ] }QUQAOQFEQ OMQKRAIQ] }IAQ AFQPLYAAJAAPSI[ {QERR
+typingListOfChars: QIAW[ {A WIOI[ {QKE LQWQ OL[ {P I QT TAOE  N NYR] }WJQEI] }RQI] }UZWQ] }QUQAOQFEQ OMQKRAIQ] }IAQ AFQPLYAAJAAPSI[ {QERR
+Test text: help a you own place order around you home each where when way over here use new time change
+Word count: 19
+Test time: 148.3616
+Total Accuracy: 19.27083
+Test Accuracy: 0
+WPM: 7.683929
+Correct count: 37
+Total count: 192
+
+typingListOfChars: [ {] }PQRQA U] }JDJAQ[ {OEISEWIEQQRQWZAHSUYOUHJPKE WQQUY WEEE WIYUU QA[ { OEWR WRE UWW  WWRIMKK[ { UP[ {TE
+typingListOfChars: [ {] }PQRQA U] }JDJAQ[ {OEISEWIEQQRQWZAHSUYOUHJPKE WQQUY WEEE WIYUU QA[ { OEWR WRE UWW  WWRIMKK[ { UP[ {TE
+Test text: b

@@ -1,0 +1,44 @@
+Test text: play plan be now around own line before need home year call and he show begin such because
+Word count: 18
+Test time: 165.9849
+Total Accuracy: 73.33334
+Test Accuracy: 0
+WPM: 6.506615
+Correct count: 66
+Total count: 90
+
+typingListOfChars: P] }AI PLZNQ E OKW AROUND OSNS INE [ {TFOREF EEDE  ME YEAR CALL ZAD HE SHOW  EGIN SHUD BECAHSE
+typingListOfChars: P] }AI PLZNQ E OKW AROUND OSNS INE [ {TFOREF EEDE  ME YEAR CALL ZAD HE SHOW  EGIN SHUD BECAHSE
+Test text: some much no eye thing come down system however word then she head seem nation number just turn can again
+Word count: 20
+Test time: 125.0459
+Total Accuracy: 82.5641
+Test Accuracy: 0
+WPM: 9.596473
+Correct count: 161
+Total count: 195
+
+typingListOfChars: SOMEBNHCH NO EYE THING COME DOWN SYSTEM HOWEVER WORD THEN SHE HEZAW EE  NATION  UMBDR JUST TURN CAN AGAIN
+typingListOfChars: SOMEBNHCH NO EYE THING COME DOWN SYSTEM HOWEVER WORD THEN SHE HEZAW EE  NATION  UMBDR JUST TURN CAN AGAIN
+Test text: some much no eye thing come down system however word then she head seem nation number just turn can again
+Word count: 20
+Test time: 116.934
+Total Accuracy: 82.33334
+Test Accuracy: 0
+WPM: 10.2622
+Correct count: 247
+Total count: 300
+
+typingListOfChars: SOME MUCH NOJEYE THING COMEH OWN SYSTEM UOWEVER WORDA HEN SHE HWAD SCEE NATIO NNUMBXR  JST TURN CZNAGAUIN
+typingListOfChars: SOME MUCH NOJEYE THING COMEH OWN SYSTEM UOWEVER WORDA HEN SHE HWAD SCEE NATIO NNUMBXR  JST TURN CZNAGAUIN
+Test text: mean those little world new children set not new never than know have change leave and who call
+Word count: 18
+Test time: 135.1421
+Total Accuracy: 82.27848
+Test Accuracy: 0
+WPM: 7.991589
+Correct count: 325
+Total count: 395
+
+typingListOfChars: MEAN TVOZE  ITTLE SORLD NEW CBKLDREN SETDNOT  NW BEVER THAN KNOW UAVE CHANGE  EZVE ZND BHO CA, <R
+typingListOfChars: MEAN TVOZE  ITTLE SORLD NEW CBKLDREN SETDNOT  NW BEVER THAN KNOW UAVE CHANGE  EZVE ZND BHO CA, <R

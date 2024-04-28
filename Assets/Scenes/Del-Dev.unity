@@ -1666,7 +1666,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8101831250473586082, guid: 8a8488c7b289afc4db693df7dd2449cf, type: 3}
       propertyPath: blinkSpeed
-      value: 0.1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 8101831250473586082, guid: 8a8488c7b289afc4db693df7dd2449cf, type: 3}
       propertyPath: rightPinkey
@@ -3230,7 +3230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6938656455733313044, guid: 47aa921f2426a404a84bb4aa2df64a0f, type: 3}
       propertyPath: User
-      value: 4
+      value: 999
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

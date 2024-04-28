@@ -1,0 +1,44 @@
+Test text: public about do with know something stand small use down many head hand what would some call
+Word count: 17
+Test time: 93.71703
+Total Accuracy: 75
+Test Accuracy: 0
+WPM: 10.88383
+Correct count: 69
+Total count: 92
+
+typingListOfChars: PUBLLJU BOUJTDO WITY KNONN SOMETHINT TAND SMALL USNM OWN MANY HEAD HAND WHAT WOULD SOME CALL
+typingListOfChars: PUBLLJU BOUJTDO WITY KNONN SOMETHINT TAND SMALL USNM OWN MANY HEAD HAND WHAT WOULD SOME CALL
+Test text: from time be move we by well with well be both like time each if become seem never than however
+Word count: 20
+Test time: 65.30843
+Total Accuracy: 87.16578
+Test Accuracy: 0
+WPM: 18.37435
+Correct count: 163
+Total count: 187
+
+typingListOfChars: FROM TIME BE MOVE WE BY WELL WITH WELL BE BOTH LIKE TIME EACH IF BECOME SEEM NEVER THEN HOWEVER
+typingListOfChars: FROM TIME BE MOVE WE BY WELL WITH WELL BE BOTH LIKE TIME EACH IF BECOME SEEM NEVER THEN HOWEVER
+Test text: move say run however too change he move come problem get turn if up when same out keep out
+Word count: 19
+Test time: 61.35258
+Total Accuracy: 90.25271
+Test Accuracy: 0
+WPM: 18.58112
+Correct count: 250
+Total count: 277
+
+typingListOfChars: MOVE SYY RUN BOWEVER TOO CBANGE HE MOVE COME PROBLEM GET TURN IF UP WHEN SAME OUT KEEP OUT
+typingListOfChars: MOVE SYY RUN BOWEVER TOO CBANGE HE MOVE COME PROBLEM GET TURN IF UP WHEN SAME OUT KEEP OUT
+Test text: help a you own place order around you home each where when way over here use new time change
+Word count: 19
+Test time: 60.92529
+Total Accuracy: 91.32791
+Test Accuracy: 0
+WPM: 18.71144
+Correct count: 337
+Total count: 369
+
+typingListOfChars: HELP A YOU OWN PLACE ORDER AROOUD UOU HOME EACB WHERE WHEN WAY OBER HERE USE NEW TIME CHANGE
+typingListOfChars: HELP A YOU OWN PLACE ORDER AROOUD UOU HOME EACB WHERE WHEN WAY OBER HERE USE NEW TIME CHANGE
